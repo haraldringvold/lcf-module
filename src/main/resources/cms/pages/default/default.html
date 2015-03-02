@@ -1,0 +1,118 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title data-th-text="${pageTitle}">LCF</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="shortcut icon" href="../../assets/img/favicon.ico"
+        data-th-href="${portal.assetUrl({'_path=img/favicon.ico'})}" type="image/x-icon"/>
+
+
+  <!-- Google webfonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css' />
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css' />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=components/font-awesome/css/modular-framework.css'})}" href="../../assets/components/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/modular-framework.css'})}" href="../../assets/css/modular-framework.css"/>
+</head>
+
+<body class="">
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/nb_NO/all.js#xfbml=1&amp;appId=192376564281879";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <div class="navigation top-nav outer inverted">
+    <div class="inner">
+      <nav class="nav-collapse">
+        <ul>
+          <li class="title primary hidden-on-small">
+            <h1>
+              <a href="index.html" data-th-href="${portal.pageUrl({'_path=' + sitePath})}"
+                data-th-text="${pageTitle}">Page title</a>
+            </h1>
+          </li>
+          <li class="title primary show-on-small">
+            <h1>
+              <a href="index.html" data-th-text="${pageTitle}">PT</a>
+            </h1>
+          </li>
+          <li data-th-each="menuItem : ${menuItems}">
+            <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
+               data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
+               data-th-class="${menuItem.path == path ? 'active' : ''}">Page title</a>
+          </li>
+          <li class="pull-right language">
+            <a href="{{ menu.language_path }}">{{ menu.change_language }}</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main class="outer" role="main" id="main" data-portal-component-type="region">
+    <div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
+      <div data-portal-component="${component.path}" data-th-remove="tag"></div>
+    </div>
+  </main>
+
+  <footer class="outer columns three">
+    <div class="inner text-left">
+      <div class="column">
+        <h3>
+          {{ footer.contact_title }}
+        </h3>
+        <p>
+          {{ footer.email }}
+        </p>
+        <p>
+          <div class="fb-like" data-href="http://www.facebook.com/linkchildfoundation" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+        </p>
+      </div>
+      <div class="column">
+        <h3>
+          {{ footer.navigation_title }}
+        </h3>
+        <ul class="linklist">
+          <li>
+            <a href="index.html">{{ footer.frontpage }}</a>
+          </li>
+          <li>
+            <a href="om.html">{{ footer.about }}</a>
+          </li>
+          <li>
+            <a href="hvordan-hjelpe.html">{{ footer.how_to_help }}</a>
+          </li>
+          <li>
+            <a href="historie.html">{{ footer.history }}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>
+          {{ footer.gift_title }}
+        </h3>
+        {{ footer.gift_text }}
+      </div>
+    </div>
+  </footer>
+
+  <!-- Javascripts -->
+  <!-- // <script src="../../assets/js/app.min.js"></script> -->
+  <script type="text/javascript" src="../../assets/js/fp.js"
+          data-th-src="${portal.assetUrl({'_path=js/app.js'})}"></script>
+
+</body>
+</html>

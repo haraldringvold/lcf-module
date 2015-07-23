@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<part-component>
+  <display-name>Article</display-name>
+  <super-type>base:structured</super-type>
+  <is-abstract>false</is-abstract>
+  <is-final>true</is-final>
+  <allow-child-content>false</allow-child-content>
+  <form>
+    <field-set name="info">
+      <label>Info</label>
+      <items>
+        <input type="ContentSelector" name="article">
+          <label>Article</label>
+          <immutable>false</immutable>
+          <indexed>false</indexed>
+          <occurrences minimum="1" maximum="1"/>
+          <config>
+            <relationship-type>system:reference</relationship-type>
+          </config>
+        </input>
+      </items>
+    </field-set>
+  </form>
+</part-component>

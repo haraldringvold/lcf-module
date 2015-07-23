@@ -11,396 +11,396 @@
     Top nav
 -------------------------------- */
 .top-nav {
-	padding: 0;
-	background: #fff !important;
-	position: fixed;
-	right: 0;
-	left:0;
-	z-index: $index-topnav;
-	
-	.inner {
-		padding: 1.5em 3em !important;
-		height: auto;
-		position: relative;
-		min-height: 75px;
-	}
+  padding: 0;
+  background: #fff !important;
+  position: fixed;
+  right: 0;
+  left:0;
+  z-index: $index-topnav;
 
-	ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		text-align: left;
+  .inner {
+    padding: 1.5em 3em !important;
+    height: auto;
+    position: relative;
+    min-height: 75px;
+  }
 
-		li { 
-			display: inline-block;
-			padding-right: 1.5em;
-			width: auto;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
 
-			&.language {
-				a {
-					color: #777 !important;
-					font-size: 0.8em;
+    li {
+      display: inline-block;
+      padding-right: 1.5em;
+      width: auto;
 
-					@include media($tablet) {
-						color: #fff !important;
-						font-size: 1em;
-					}
-				}
-			}
+      &.language {
+        a {
+          color: #777 !important;
+          font-size: 0.8em;
 
-			&.hidden-on-small {
-			    display: inline-block;
+          @include media($tablet) {
+            color: #fff !important;
+            font-size: 1em;
+          }
+        }
+      }
 
-			    @include media($mobile) {
-			        display: none;   
-			    }
-			}
+      &.hidden-on-small {
+          display: inline-block;
 
-			&.show-on-small {
-			    display: none;
+          @include media($mobile) {
+              display: none;
+          }
+      }
 
-			    @include media($mobile) {
-			        display: inline-block;
-			    }
-			}
+      &.show-on-small {
+          display: none;
 
-			&:not(.title) {
-				padding-top: 3px;
-			}
+          @include media($mobile) {
+              display: inline-block;
+          }
+      }
 
-			&.float.right {
-				float: right;
-			}
+      &:not(.title) {
+        padding-top: 3px;
+      }
 
-			&.title {
-				font-family: 'Roboto Slab', serif;
-				font-weight: bold;
-				padding-right: 3em;	
+      &.float.right {
+        float: right;
+      }
 
-				&.primary {
-					 a {
-					 	color: $primary-color;
-					 }
-				}
+      &.title {
+        font-family: 'Roboto Slab', serif;
+        font-weight: bold;
+        padding-right: 3em;
 
-				h1 {
-					font-size: 1.2em;
-					margin: 0;
-					padding: 0;
-				}
-			}
+        &.primary {
+           a {
+            color: $primary-color;
+           }
+        }
 
-			&.active {
-				a {
-					color: $primary-color;
-				}
-			}
+        h1 {
+          font-size: 1.2em;
+          margin: 0;
+          padding: 0;
+        }
+      }
 
-			a {
-				text-decoration: none;
-				color: inherit;	
-				@include transition(all 0.1s ease-in-out);
+      &.active {
+        a {
+          color: $primary-color;
+        }
+      }
 
-				&:hover {
-					color: $primary-color;
-				}
+      a {
+        text-decoration: none;
+        color: inherit;
+        @include transition(all 0.1s ease-in-out);
 
-				i {
-					font-size: 1.2em;
-					margin-top: 1px;
-					margin-right: 5px;
-				}
-			}
+        &:hover {
+          color: $primary-color;
+        }
 
-			&.dropdown {
-				position: relative;
-				margin-right: 1em;
-				cursor: pointer;
+        i {
+          font-size: 1.2em;
+          margin-top: 1px;
+          margin-right: 5px;
+        }
+      }
 
-				&.active {
-					color: $primary-color;
-				}
+      &.dropdown {
+        position: relative;
+        margin-right: 1em;
+        cursor: pointer;
 
-				&:after {
-					@include triangle(10px, $darkest, down);
-					content: "";
-					position: absolute;
-					display: inline-block;
-					right: 4px;
-					top: 12px;
-				}
+        &.active {
+          color: $primary-color;
+        }
 
-				ul {
-					z-index: $index-topnav-dropdown;
-					position: absolute;
-					top: 58px;
-					right: -10px;
-					padding: 1.5em;
-					background: $darkest;
-					display: none;
+        &:after {
+          @include triangle(10px, $darkest, down);
+          content: "";
+          position: absolute;
+          display: inline-block;
+          right: 4px;
+          top: 12px;
+        }
 
-					li {
-						display: block;
-						color: #fff;
+        ul {
+          z-index: $index-topnav-dropdown;
+          position: absolute;
+          top: 58px;
+          right: -10px;
+          padding: 1.5em;
+          background: $darkest;
+          display: none;
 
-						a {
-							color: #fff;
+          li {
+            display: block;
+            color: #fff;
 
-							&:hover {
-								color: $primary-color;
-							}
-						}
-					}
+            a {
+              color: #fff;
 
-					&:before {
-						@include triangle(20px, $darkest, up);
-						content: "";
-						position: absolute;
-						display: inline-block;
-						right: 10px;
-						top: -20px;
-					}
-				}
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
 
-				&.open {
-					ul {
-						display: block;
-					}
+          &:before {
+            @include triangle(20px, $darkest, up);
+            content: "";
+            position: absolute;
+            display: inline-block;
+            right: 10px;
+            top: -20px;
+          }
+        }
 
-					&:after {
-						@include triangle(10px, $darkest, up);
-						content: "";
-						position: absolute;
-						display: inline-block;
-						right: 4px;
-						top: 7px;
-					}
-				}
-			}
-		}
-	}
+        &.open {
+          ul {
+            display: block;
+          }
 
-	&.inverted {
-		background: $darkest !important;
+          &:after {
+            @include triangle(10px, $darkest, up);
+            content: "";
+            position: absolute;
+            display: inline-block;
+            right: 4px;
+            top: 7px;
+          }
+        }
+      }
+    }
+  }
 
-		ul {
-			li {
-				a {
-					color: #fff;
+  &.inverted {
+    background: $darkest !important;
 
-					&:hover {
-						color: $primary-color;
-					}					
-				}
+    ul {
+      li {
+        a {
+          color: #fff;
 
-				&.active {
-					a {
-						color: $primary-color;
-					}
-				}
+          &:hover {
+            color: $primary-color;
+          }
+        }
 
-				&.dropdown {
-					color: #fff;
+        &.active {
+          a {
+            color: $primary-color;
+          }
+        }
 
-					&.active {
-						color: $primary-color;
-					}
+        &.dropdown {
+          color: #fff;
 
-					&:hover {
-						color: $primary-color;
-					}
+          &.active {
+            color: $primary-color;
+          }
 
-					&:after {
-						@include triangle(10px, #fff, down);
-						content: "";
-						position: absolute;
-						display: inline-block;
-						right: 4px;
-						top: 12px;
-					}
+          &:hover {
+            color: $primary-color;
+          }
 
-					&.open {
-						&:after {
-							@include triangle(10px, #fff, up);
-							content: "";
-							position: absolute;
-							display: inline-block;
-							right: 4px;
-							top: 7px;
-						}
+          &:after {
+            @include triangle(10px, #fff, down);
+            content: "";
+            position: absolute;
+            display: inline-block;
+            right: 4px;
+            top: 12px;
+          }
 
-						ul {
-							background: #fff;
+          &.open {
+            &:after {
+              @include triangle(10px, #fff, up);
+              content: "";
+              position: absolute;
+              display: inline-block;
+              right: 4px;
+              top: 7px;
+            }
 
-							li {
-								display: block;
-								 a {
-								 	color: $darkest;
+            ul {
+              background: #fff;
 
-								 	&:hover {
-								 		color: $primary-color;
-								 	}
-								 }
-							}
+              li {
+                display: block;
+                 a {
+                  color: $darkest;
 
-							&:before {
-								@include triangle(20px, #fff, up);
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+                  &:hover {
+                    color: $primary-color;
+                  }
+                 }
+              }
 
-	.top-nav-trigger {
-		display: none;
-	}
+              &:before {
+                @include triangle(20px, #fff, up);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .top-nav-trigger {
+    display: none;
+  }
 }
 
 @include media($tablet) {
-	.top-nav {
-		height: auto;
-		overflow: visible;
-		max-height: 9999px;
-		min-height: 90px;
-		position: relative;
-		opacity: 1;
+  .top-nav {
+    height: auto;
+    overflow: visible;
+    max-height: 9999px;
+    min-height: 90px;
+    position: relative;
+    opacity: 1;
 
-		.inner {
-			padding: 2em 3em !important;
-		}
+    .inner {
+      padding: 2em 3em !important;
+    }
 
-		.nav-collapse {
-			clip: rect(0px, 9999px, 30px, 0px);
-			max-height: 90px;
-			position: absolute;
-			display: block;
-			overflow: hidden;
-			zoom: 1;
+    .nav-collapse {
+      clip: rect(0px, 9999px, 30px, 0px);
+      max-height: 90px;
+      position: absolute;
+      display: block;
+      overflow: hidden;
+      zoom: 1;
 
-			&.disable-pointer-events {
-				pointer-events: none !important;
-			}
+      &.disable-pointer-events {
+        pointer-events: none !important;
+      }
 
-			li {
-				width: 100%;
-				display: block;
-				padding-bottom: 0.5em;
+      li {
+        width: 100%;
+        display: block;
+        padding-bottom: 0.5em;
 
-				&.title {
-					padding-bottom: 1em;
-					word-wrap: none;
-				}
-			}
+        &.title {
+          padding-bottom: 1em;
+          word-wrap: none;
+        }
+      }
 
-			.nav-toggle {
-				-webkit-tap-highlight-color: rgba(0,0,0,0);
-				-webkit-touch-callout: none;
-				-webkit-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				-o-user-select: none;
-				user-select: none;
-			}
-		}
+      .nav-toggle {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      }
+    }
 
-		.top-nav-trigger {
-			display: block;
-	    	z-index: $index-topnav;
-			position: absolute;
-			right: 1em;
-			top: 14px;
-			height: 65px;
-			width: 70px;
-			padding: 20px 30px;
-			cursor: pointer;
+    .top-nav-trigger {
+      display: block;
+        z-index: $index-topnav;
+      position: absolute;
+      right: 1em;
+      top: 14px;
+      height: 65px;
+      width: 70px;
+      padding: 20px 30px;
+      cursor: pointer;
 
-			.toggler {
-		        position: relative;
-		        display: block;
-		        margin-top: 10px;
-		        float: right;
-		    }
+      .toggler {
+            position: relative;
+            display: block;
+            margin-top: 10px;
+            float: right;
+        }
 
-		    .toggler,
-		    .toggler:before,
-		    .toggler:after {
-		        @include transition(all 0.1s ease-in-out);
-		        background-color: $darkest;
-		        width: 30px;
-		        height: 3px;
-		    }
+        .toggler,
+        .toggler:before,
+        .toggler:after {
+            @include transition(all 0.1s ease-in-out);
+            background-color: $darkest;
+            width: 30px;
+            height: 3px;
+        }
 
-		    .toggler:before,
-		    .toggler:after {
-		        position: absolute;
-		        margin-top: -10px;
-		        content: " ";
-		    }
+        .toggler:before,
+        .toggler:after {
+            position: absolute;
+            margin-top: -10px;
+            content: " ";
+        }
 
-		    .toggler:after {
-		        margin-top: 10px;
-		    }
-		}
+        .toggler:after {
+            margin-top: 10px;
+        }
+    }
 
-		&.inverted {
-			.top-nav-trigger {
-				.toggler,
-			    .toggler:before,
-			    .toggler:after {
-					background-color: #fff;
-				}
-			}
-		}
+    &.inverted {
+      .top-nav-trigger {
+        .toggler,
+          .toggler:before,
+          .toggler:after {
+          background-color: #fff;
+        }
+      }
+    }
 
-	    &.top-nav-open .toggler {
-	    	background-color: transparent !important;
+      &.top-nav-open .toggler {
+        background-color: transparent !important;
 
-	        &:after {
-	        	margin-top: 9px;
-	        }
-	    }
+          &:after {
+            margin-top: 9px;
+          }
+      }
 
-	    &.top-nav-open .toggler:before {
-	        -webkit-transform: rotate(45deg) translate(.5em, .4em);
-	           -moz-transform: rotate(45deg) translate(.5em, .4em);
-	            -ms-transform: rotate(45deg) translate(.5em, .4em);
-	             -o-transform: rotate(45deg) translate(.5em, .4em);
-	                transform: rotate(45deg) translate(.5em, .4em);
-	        margin-left: -2px;
-	    }
+      &.top-nav-open .toggler:before {
+          -webkit-transform: rotate(45deg) translate(.5em, .4em);
+             -moz-transform: rotate(45deg) translate(.5em, .4em);
+              -ms-transform: rotate(45deg) translate(.5em, .4em);
+               -o-transform: rotate(45deg) translate(.5em, .4em);
+                  transform: rotate(45deg) translate(.5em, .4em);
+          margin-left: -2px;
+      }
 
-	    &.top-nav-open .toggler:after {
-	        -webkit-transform: rotate(-45deg) translate(.45em, -.35em);
-	           -moz-transform: rotate(-45deg) translate(.45em, -.35em);
-	            -ms-transform: rotate(-45deg) translate(.45em, -.35em);
-	             -o-transform: rotate(-45deg) translate(.45em, -.35em);
-	                transform: rotate(-45deg) translate(.45em, -.35em);
-	        margin-left: -2px;
-	    }
+      &.top-nav-open .toggler:after {
+          -webkit-transform: rotate(-45deg) translate(.45em, -.35em);
+             -moz-transform: rotate(-45deg) translate(.45em, -.35em);
+              -ms-transform: rotate(-45deg) translate(.45em, -.35em);
+               -o-transform: rotate(-45deg) translate(.45em, -.35em);
+                  transform: rotate(-45deg) translate(.45em, -.35em);
+          margin-left: -2px;
+      }
 
-		&.top-nav-open {
-			.nav-collapse {
-				@include transition(all 0.1s ease-in-out);
-				clip: auto;
-				max-height: none;
-				position: relative;
-			}
-		}
-	}
+    &.top-nav-open {
+      .nav-collapse {
+        @include transition(all 0.1s ease-in-out);
+        clip: auto;
+        max-height: none;
+        position: relative;
+      }
+    }
+  }
 }
 
 @include media($screen) {
-  	.js .nav-collapse {
-    	position: relative;
-  	}
-  	.js .nav-collapse.closed {
-    	max-height: none;
-  	}
-  	.nav-toggle {
-    	display: none;
-  	}
+    .js .nav-collapse {
+      position: relative;
+    }
+    .js .nav-collapse.closed {
+      max-height: none;
+    }
+    .nav-toggle {
+      display: none;
+    }
 }
 
 
@@ -408,88 +408,88 @@
     Left and right nav
 -------------------------------- */
 .side-nav {
-	@include transition(all 0.1s ease-in-out);
-	position: fixed;
-	top: 0px;
-	width: $side-nav-width + 30px;
-	clip: rect(auto, $side-nav-width, auto, auto);
-	height: 100%;
-	background: $side-nav-background-color;
-	color: $side-nav-text-color;
-	padding: 80px 50px 40px 15px;
-	overflow: auto;
-	margin-right: -15px;
-	// box-shadow: inset -10px 0px 20px rgba(0, 0, 0, 0.2);
+  @include transition(all 0.1s ease-in-out);
+  position: fixed;
+  top: 0px;
+  width: $side-nav-width + 30px;
+  clip: rect(auto, $side-nav-width, auto, auto);
+  height: 100%;
+  background: $side-nav-background-color;
+  color: $side-nav-text-color;
+  padding: 80px 50px 40px 15px;
+  overflow: auto;
+  margin-right: -15px;
+  // box-shadow: inset -10px 0px 20px rgba(0, 0, 0, 0.2);
 
-	&.persistant {
-		padding-top: 0px;
+  &.persistant {
+    padding-top: 0px;
 
-		@include media($tablet) {
-			padding-top: 80px;
-		}
-	}
+    @include media($tablet) {
+      padding-top: 80px;
+    }
+  }
 
-	&.closed {
-		margin-left: $side-nav-width *(-1);
-	}
+  &.closed {
+    margin-left: $side-nav-width *(-1);
+  }
 
-	&.left-nav {
-		left: 0px;
-	}
+  &.left-nav {
+    left: 0px;
+  }
 
-	h2 {
-		margin-top: 1em;
-		font-size: 1.3em;
-		font-weight: 400;
-	}
+  h2 {
+    margin-top: 1em;
+    font-size: 1.3em;
+    font-weight: 400;
+  }
 
-	form {
-		margin: 0;
-		padding: 0;
-	}
+  form {
+    margin: 0;
+    padding: 0;
+  }
 
-	hr {
-		margin: 2em 0 2em 0;
-		padding: 0;
-		height: 0px;
-		border: none;
-		border-top: 1px solid $dark !important;
-		border-color: $dark;
-		background: $dark !important;
-	}
+  hr {
+    margin: 2em 0 2em 0;
+    padding: 0;
+    height: 0px;
+    border: none;
+    border-top: 1px solid $dark !important;
+    border-color: $dark;
+    background: $dark !important;
+  }
 
-	ul.linklist {
-		li {
-			margin-bottom: 0.7em;
+  ul.linklist {
+    li {
+      margin-bottom: 0.7em;
 
-			a {
-				font-size: 0.9em;
-				color: $side-nav-text-color;
-				text-decoration: none;
-				font-weight: 300;
-				letter-spacing: 1px;
+      a {
+        font-size: 0.9em;
+        color: $side-nav-text-color;
+        text-decoration: none;
+        font-weight: 300;
+        letter-spacing: 1px;
 
-				&:hover {
-					color: $primary-color;
-				}
+        &:hover {
+          color: $primary-color;
+        }
 
-				i {
-					margin-right: 0.5em;
-					color: $primary-color;
-				}
-			}
+        i {
+          margin-right: 0.5em;
+          color: $primary-color;
+        }
+      }
 
-			&.active {
-				a {
-					color: $primary-color;
-				}
-			}
-		}
-	}
+      &.active {
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }
 }
 
 .content-wrapper {
-	@include transition(all 0.1s ease-in-out);
+  @include transition(all 0.1s ease-in-out);
     height: 100%;
     left: 0px;
     right: 0px;
@@ -497,9 +497,9 @@
     position: relative;
 
     @include media($tablet) {
-    	width: 100%;
-    	position: absolute;
-    	overflow-x: hidden !important;
+      width: 100%;
+      position: absolute;
+      overflow-x: hidden !important;
     }
 
     &.side-nav-open, &.side-nav-persistant.side-nav-open {
@@ -507,68 +507,68 @@
     }
 
     @include media($tablet) {
-    	&.side-nav-open, &.side-nav-persistant.side-nav-open {
-		    margin-left: 0;
-		    left: $side-nav-width;
-		    overflow-x: hidden;
-		}
+      &.side-nav-open, &.side-nav-persistant.side-nav-open {
+        margin-left: 0;
+        left: $side-nav-width;
+        overflow-x: hidden;
+    }
     }
 
     .side-nav-trigger {
-    	z-index: $index-topnav;
-    	background: $side-nav-toggler-background-color;
-		position: fixed;
-		left: -5px;
-		top: 20px;
-		height: 65px;
-		width: 70px;
-		padding: 20px;
-		cursor: pointer;
-		z-index: $index-sidenav-toggler;
+      z-index: $index-topnav;
+      background: $side-nav-toggler-background-color;
+    position: fixed;
+    left: -5px;
+    top: 20px;
+    height: 65px;
+    width: 70px;
+    padding: 20px;
+    cursor: pointer;
+    z-index: $index-sidenav-toggler;
 
-		.toggler {
-	        position: relative;
-	        display: block;
-	        margin-top: 10px;
-	        float: right;
-	    }
+    .toggler {
+          position: relative;
+          display: block;
+          margin-top: 10px;
+          float: right;
+      }
 
-	    .toggler,
-	    .toggler:before,
-	    .toggler:after {
-	        @include transition(all 0.1s ease-in-out);
-	        background-color: $side-nav-toggler-icon-color;
-	        width: 30px;
-	        height: 3px;
-	    }
+      .toggler,
+      .toggler:before,
+      .toggler:after {
+          @include transition(all 0.1s ease-in-out);
+          background-color: $side-nav-toggler-icon-color;
+          width: 30px;
+          height: 3px;
+      }
 
-	    .toggler:before,
-	    .toggler:after {
-	        position: absolute;
-	        margin-top: -10px;
-	        content: " ";
-	    }
+      .toggler:before,
+      .toggler:after {
+          position: absolute;
+          margin-top: -10px;
+          content: " ";
+      }
 
-	    .toggler:after {
-	        margin-top: 10px;
-	    }
-	}
+      .toggler:after {
+          margin-top: 10px;
+      }
+  }
 
-	&.side-nav-persistant {
-		.side-nav-trigger {
-			display: none;
+  &.side-nav-persistant {
+    .side-nav-trigger {
+      display: none;
 
-			@include media($tablet) {
-				display: block;
-			}
-		}
-	}
+      @include media($tablet) {
+        display: block;
+      }
+    }
+  }
 
     &.side-nav-open .toggler {
-    	background: transparent;
+      background: transparent;
 
         &:after {
-        	margin-top: 9px;
+          margin-top: 9px;
         }
     }
 

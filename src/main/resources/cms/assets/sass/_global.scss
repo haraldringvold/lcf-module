@@ -2,7 +2,7 @@
     TABLE OF CONTENTS
 -----------------------------------
     General
-    Wrappers    
+    Wrappers
     Buttons
 
 ----- */
@@ -12,8 +12,8 @@
     General
 -------------------------------- */
 *, *:before, *:after {
-    -moz-box-sizing: border-box; 
-    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -33,14 +33,23 @@ body {
     }
 }
 
+.main {
+  margin-top: 60px;
+}
+@media screen and (max-width: 900px) {
+  .main {
+    margin-top:0;
+  }
+}
+
 ::-moz-selection {
   background: $highlight-color;
-  text-shadow: none; 
+  text-shadow: none;
 }
 
 ::selection {
   background: $highlight-color;
-  text-shadow: none; 
+  text-shadow: none;
 }
 
 ::-webkit-input-placeholder { color: $input-placeholder-color; }
@@ -96,7 +105,7 @@ body {
     li {
         display: inline-block;
         margin: 0 0.5em;
-    }    
+    }
 
     @include media($tablet) {
         li {
@@ -144,18 +153,18 @@ body {
 }
 
 body.boxed {
-    
+
     .outer {
         @include outer-container;
     }
-    
+
     .inner {
-        
+
     }
 
     @include media($tablet) {
         .inner {
-            
+
         }
     }
 }
@@ -270,13 +279,13 @@ body.boxed {
         }
     }
 
-    &.small { 
-        font-size: 0.8em; 
-        padding: 0.8em 1.8em; 
+    &.small {
+        font-size: 0.8em;
+        padding: 0.8em 1.8em;
     }
 
-    &.large { 
-        font-size: 1.5em; 
+    &.large {
+        font-size: 1.5em;
         border-width: 3px;
         padding: 1em 2em;
     }

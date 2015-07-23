@@ -15,127 +15,128 @@
     Eyecatcher
 -------------------------------- */
 .eyecatcher {
-	background-color: #fdfdfb;
-	background-repeat: no-repeat;
-	background-position: center center;
+  background-color: #fdfdfb;
+  background-repeat: no-repeat;
+  background-position: center center;
 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	
-	text-align: center;
-	position: relative;
-	display: table; 
-   	margin: 0 auto;
-   	width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-   	&.solid {
-   		background: $darkest;
-   	}
+  text-align: center;
+  position: relative;
+  display: table;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 400px;
 
-   	&.fixed {
-   		background-attachment: fixed;
-   	}
+    &.solid {
+      background: $darkest;
+    }
 
-   	@include media($tablet) {
-		height: 400px;
-		background-attachment: scroll !important;
-   	}
+    &.fixed {
+      background-attachment: fixed;
+    }
 
-   	@include media($mobile) {
-		height: 300px;
-   	}
+    @include media($tablet) {
+    height: 400px;
+    background-attachment: scroll !important;
+    }
 
- 	&.top-margin {
- 		margin-top: 60px;
+    @include media($mobile) {
+    height: 300px;
+    }
 
- 		@include media($tablet) {
-			margin-top: 0;
- 		}
+  &.top-margin {
+    margin-top: 60px;
 
- 		@include media($mobile) {
-			margin-top: 0;
- 		}
+    @include media($tablet) {
+      margin-top: 0;
+    }
 
- 	}
+    @include media($mobile) {
+      margin-top: 0;
+    }
 
-	.inner {
-		margin: 0;
-		padding: 0;
-		height: 100%;
-		width: 100%;
-		max-width: none;
-	    display: table-cell;   
-	    vertical-align: middle;  
-		text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
-	}
+  }
 
-	&.bottom-content {
-		overflow: hidden;
-		padding-bottom: 0;
-		min-height: auto;
+  .inner {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    max-width: none;
+      display: table-cell;
+      vertical-align: middle;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
+  }
 
-		.inner {
-			.super {
-				padding-top: 2em;
-			}
+  &.bottom-content {
+    overflow: hidden;
+    padding-bottom: 0;
+    min-height: auto;
 
-			@include outer-container;
-			margin: 0 auto;
-			vertical-align: bottom;  
-		}
+    .inner {
+      .super {
+        padding-top: 2em;
+      }
 
-		&.bottom-image {
-			img {
-				width: 100%;
-				max-width: $max-width;
-				margin: 5em auto 0 auto;
-				// margin-bottom: -3em;
-				display: block;
-				clear: both;
-			}
-		}
+      @include outer-container;
+      margin: 0 auto;
+      vertical-align: bottom;
+    }
 
-		&.bottom-info {
-			.content {
-				width: 100%;
-				max-width: $max-width;
-				margin: 5em auto 0 auto;
-				display: block;
-				clear: both;	
-				color: #fff;
-				font-size: 1.4em;
-				padding-bottom: 60px;
-				font-weight: 300;
-				z-index: 100;
-				position: relative;
-				text-shadow: none;
+    &.bottom-image {
+      img {
+        width: 100%;
+        max-width: $max-width;
+        margin: 5em auto 0 auto;
+        // margin-bottom: -3em;
+        display: block;
+        clear: both;
+      }
+    }
 
-				i.fa {
-					margin-right: 0.3em;
-				}
-			}
+    &.bottom-info {
+      .content {
+        width: 100%;
+        max-width: $max-width;
+        margin: 5em auto 0 auto;
+        display: block;
+        clear: both;
+        color: #fff;
+        font-size: 1.4em;
+        padding-bottom: 60px;
+        font-weight: 300;
+        z-index: 100;
+        position: relative;
+        text-shadow: none;
 
-			&.has-gradient {
-			    position: relative;
+        i.fa {
+          margin-right: 0.3em;
+        }
+      }
 
-			    &:after {
-			        content: "";
-			        position: absolute;
-			        left: 0;
-			        bottom: 0;
-			        right: 0;
-			        width: 150%;
-			        min-height: 200px;
-			        max-height: 340px;
-			        height: 100%;
-			        background: url(../images/content-gradient.png) repeat-x top;
-			        opacity: 0.9;
-			    }
-			}
-		}
-	}
+      &.has-gradient {
+          position: relative;
+
+          &:after {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              width: 150%;
+              min-height: 200px;
+              max-height: 340px;
+              height: 100%;
+              background: url(../images/content-gradient.png) repeat-x top;
+              opacity: 0.9;
+          }
+      }
+    }
+  }
 }
 
 
@@ -144,86 +145,86 @@
 -------------------------------- */
 .columns {
 
-	&.two {
-		.column {
-			@include span-columns(6);
-			padding: 0 1em;
+  &.two {
+    .column {
+      @include span-columns(6);
+      padding: 0 1em;
 
-			@include media($tablet) {
-				@include span-columns(4);
-				padding-bottom: 2em;
-			}
+      @include media($tablet) {
+        @include span-columns(4);
+        padding-bottom: 2em;
+      }
 
-			&:nth-child(2n) {
-				@include omega;
-				margin-bottom: 2em;
-			}
+      &:nth-child(2n) {
+        @include omega;
+        margin-bottom: 2em;
+      }
 
-			&:last-child { margin-bottom: 0; }
-			.image + h2 { margin-top: 1em; }
+      &:last-child { margin-bottom: 0; }
+      .image + h2 { margin-top: 1em; }
 
-			.image {
-				img {
-					width: 100%;
-					height: auto;
-				}
-			}
-		}
-	}
+      .image {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
 
-	&.three {
-		.column {
-			@include span-columns(4);
-			padding: 0 1em;
+  &.three {
+    .column {
+      @include span-columns(4);
+      padding: 0 1em;
 
-			@include media($tablet) {
-				@include span-columns(4);
-				padding-bottom: 2em;
-			}
+      @include media($tablet) {
+        @include span-columns(4);
+        padding-bottom: 2em;
+      }
 
-			&:nth-child(3n) {
-				@include omega;
-				margin-bottom: 2em;
-			}
+      &:nth-child(3n) {
+        @include omega;
+        margin-bottom: 2em;
+      }
 
-			&:last-child { margin-bottom: 0; }
-			.image + h2 { margin-top: 1em; }
+      &:last-child { margin-bottom: 0; }
+      .image + h2 { margin-top: 1em; }
 
-			.image {
-				img {
-					width: 100%;
-					height: auto;
-				}
-			}
-		}
-	}
+      .image {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
 
-	&.four {
-		.column {
-			@include span-columns(3);
-			padding: 0 1em;
+  &.four {
+    .column {
+      @include span-columns(3);
+      padding: 0 1em;
 
-			@include media($tablet) {
-				@include span-columns(4);
-				padding-bottom: 2em;
-			}
+      @include media($tablet) {
+        @include span-columns(4);
+        padding-bottom: 2em;
+      }
 
-			&:nth-child(4n) {
-				@include omega;
-				margin-bottom: 2em;
-			}
+      &:nth-child(4n) {
+        @include omega;
+        margin-bottom: 2em;
+      }
 
-			&:last-child { margin-bottom: 0; }
-			.image + h2 { margin-top: 1em; }
+      &:last-child { margin-bottom: 0; }
+      .image + h2 { margin-top: 1em; }
 
-			.image {
-				img {
-					width: 100%;
-					height: auto;
-				}
-			}
-		}
-	}
+      .image {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
 }
 
 
@@ -231,98 +232,98 @@
     Galleries
 ------------------------------------ */
 .gallery {
-	@include clearfix;
+  @include clearfix;
 
-	a {
-		&:hover {
-			opacity: 0.9;
-		}
-	}
+  a {
+    &:hover {
+      opacity: 0.9;
+    }
+  }
 
-	&.xlarge {
-		.image {
-			@include span-columns(12);
+  &.xlarge {
+    .image {
+      @include span-columns(12);
 
-			&:nth-child(odd) {
-				@include omega;
-			}
+      &:nth-child(odd) {
+        @include omega;
+      }
 
-			img {
-				width: 100%;
-				height: auto;
-				margin-bottom: 1em;
-			}
-		}
-	}
-	
-	&.large {
-		.image {
-			@include span-columns(6);
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1em;
+      }
+    }
+  }
 
-			&:nth-child(odd) {
-				@include omega;
-			}
+  &.large {
+    .image {
+      @include span-columns(6);
 
-			img {
-				width: 100%;
-				height: auto;
-				margin-bottom: 1em;
-			}
-		}
-	}
+      &:nth-child(odd) {
+        @include omega;
+      }
 
-	&.small {
-		.image {
-			@include span-columns(4);
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1em;
+      }
+    }
+  }
 
-			&:nth-child(3n) {
-				@include omega;
-			}
+  &.small {
+    .image {
+      @include span-columns(4);
 
-			img {
-				width: 100%;
-				height: auto;
-				margin-bottom: 1em;
-			}
-		}
-	}
+      &:nth-child(3n) {
+        @include omega;
+      }
 
-	&.full-width {
-		margin: 0;
-		padding: 0;
-		// background: $darkest;
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1em;
+      }
+    }
+  }
 
-		.image {
-			margin: 0px;
+  &.full-width {
+    margin: 0;
+    padding: 0;
+    // background: $darkest;
 
-			img {
-				margin: 0px;
-				float: left;
-			}
-		}
+    .image {
+      margin: 0px;
 
-		&.xlarge {
-			.image {
-				width: 100%;
-			}
-		}
+      img {
+        margin: 0px;
+        float: left;
+      }
+    }
 
-		&.large {
-			.image {
-				width: 50%;
-			}
-		}
+    &.xlarge {
+      .image {
+        width: 100%;
+      }
+    }
 
-		&.small {
-			.image {
-				width: 25%;
+    &.large {
+      .image {
+        width: 50%;
+      }
+    }
 
-				@include media($tablet) {
-					width: 50%;	
-				}
-			}
-		}
-	}
+    &.small {
+      .image {
+        width: 25%;
+
+        @include media($tablet) {
+          width: 50%;
+        }
+      }
+    }
+  }
 }
 
 
@@ -330,83 +331,83 @@
     Price table
 -------------------------------- */
 .price-table {
-	
-	&.four {
-		.column {
-			@include span-columns(3);
-		}
-	}
 
-	&.three {
-		.column {
-			@include span-columns(4);
-		}
-	}
+  &.four {
+    .column {
+      @include span-columns(3);
+    }
+  }
 
-	@include media($tablet) {
-		.column {
-			width: 100% !important;
-			display: block;
-			margin-bottom: 2em;
-		}
-	}
+  &.three {
+    .column {
+      @include span-columns(4);
+    }
+  }
 
-	header {
-		background-color: $darkest;
-		color: #fff;
-		padding: 3em 1.5em;
-		border-radius: 4px 4px 0 0;
+  @include media($tablet) {
+    .column {
+      width: 100% !important;
+      display: block;
+      margin-bottom: 2em;
+    }
+  }
 
-		&.focus {
-			background-color: $primary-color;
-		}
+  header {
+    background-color: $darkest;
+    color: #fff;
+    padding: 3em 1.5em;
+    border-radius: 4px 4px 0 0;
 
-		small {
-			display: block;
-			margin-bottom: 1em;
-		}
+    &.focus {
+      background-color: $primary-color;
+    }
 
-		.price {
-			font-size: 3em;
-			vertical-align: bottom;
-			padding-bottom: 0.3em;
+    small {
+      display: block;
+      margin-bottom: 1em;
+    }
 
-			* {
-				display: inline-block;
-			}
+    .price {
+      font-size: 3em;
+      vertical-align: bottom;
+      padding-bottom: 0.3em;
 
-			span {
-				opacity: 0.7; 
+      * {
+        display: inline-block;
+      }
 
-				&.currency {
-					font-size: 0.4em;
-				}
+      span {
+        opacity: 0.7;
 
-				&.frequency {
-					font-size: 0.2em;
-				}
-			}
-		}
-	}
+        &.currency {
+          font-size: 0.4em;
+        }
 
-	.line {
-		padding: 0.8em 1em;
-		border-color: #bbb;
-		border-style: solid;
-		border-width: 0 1px 1px 1px;
-		background: #fff;
-		text-align: left;
-		font-size: 0.9em;
-		opacity: 0.8;
+        &.frequency {
+          font-size: 0.2em;
+        }
+      }
+    }
+  }
 
-		i {
-			margin-right: 0.8em;
-		}
+  .line {
+    padding: 0.8em 1em;
+    border-color: #bbb;
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+    background: #fff;
+    text-align: left;
+    font-size: 0.9em;
+    opacity: 0.8;
 
-		&:last-child {
-			border-radius: 0 0 4px 4px;
-		}
-	}
+    i {
+      margin-right: 0.8em;
+    }
+
+    &:last-child {
+      border-radius: 0 0 4px 4px;
+    }
+  }
 
 }
 
@@ -415,19 +416,19 @@
     Footers
 -------------------------------- */
 footer.outer {
-	background: $darker !important;
+  background: $darker !important;
     color: #fff;
     padding-top: 3em;
     padding-bottom: 4.5em;
-    
+
     .inner {
-    	
+
     }
 
     @include media($tablet) {
-    	.column {
-    		text-align: center;
-    	}
+      .column {
+        text-align: center;
+      }
     }
 }
 

@@ -1,24 +1,45 @@
 var menu = require('/cms/lib/menu.js');
 var stk = require('/cms/lib/stk/stk.js');
+var utilities = require('/cms/lib/utilities.js');
 
 exports.get = function(req) {
   var component = execute('portal.getComponent');
   var config = component.config;
 
-  var heading = config['heading'];
-  var linkUrl = config['linkUrl'];
-  var linkText = config['linkText'];
-  var imgUrl =  execute('portal.imageUrl', {
-    id: config['image']
-  });
+  var baseClasses = "outer eyecatcher fixed";
+
+  var heading       = config['heading'];
+  var linkText      = config['linkText'];
+  var linkUrl       = config['linkUrl'];
+  var anchorContent = config['anchorContent'];
+  var linkPage      = config['linkPage'];
+  var imgUrl        =  execute('portal.imageUrl', {id: config['image']});
+  var url           = determineUrl(linkUrl, anchorContent, linkPage);
+  var classes       = config['fullHeight'] ? baseClasses+" full-height" : baseClasses;
 
   var params = {
     heading: heading,
-    linkUrl: linkUrl,
-    linkText: linkText
+    linkText: linkText,
+    url: url,
+    imgUrl: imgUrl,
+    classes: classes
   };
 
   var view = resolve('eye-catcher.html');
 
   return stk.view.render(view, params);
 };
+
+var determineUrl = function(linkUrl, anchorContent, linkPage) {
+  if (linkUrl) {
+    return utilities.getLinkUrl(null, linkUrl, null);
+  }
+  if (linkPage) {
+    return utilities.getLinkUrl(linkPage, null, null);
+  }
+  if (anchorContent) {
+    return utilities.getLinkUrl(null, null, anchorContent);
+  }
+  return "";
+};
+

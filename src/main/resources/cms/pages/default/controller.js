@@ -4,7 +4,6 @@ var stk = require('/cms/lib/stk/stk.js');
 exports.get = function(req) {
 
   var site = execute('portal.getSite');
-  var site = execute('portal.getSite');
   var content = execute('portal.getContent');
 
   var menuItems = menu.getSiteMenu(3);
@@ -32,8 +31,9 @@ exports.get = function(req) {
       'og:url': null,
       'og:image': execute('portal.assetUrl', { path: 'img/og-enonic-logo.png' })
   };
-  stk.log(content.page.regions);
+
   var params = {
+      siteTitle: site['displayName'],
       mainRegion: content.page.regions['main'],
       sitePath: site['_path'],
       moduleConfig: moduleConfig,

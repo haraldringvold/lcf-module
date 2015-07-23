@@ -41,12 +41,12 @@
           <li class="title primary hidden-on-small">
             <h1>
               <a href="index.html" data-th-href="${portal.pageUrl({'_path=' + sitePath})}"
-                data-th-text="${pageTitle}">Page title</a>
+                data-th-text="${siteTitle}">Page title</a>
             </h1>
           </li>
           <li class="title primary show-on-small">
             <h1>
-              <a href="index.html" data-th-text="${pageTitle}">PT</a>
+              <a href="index.html" data-th-text="${siteTitle}">PT</a>
             </h1>
           </li>
           <li data-th-each="menuItem : ${menuItems}">
@@ -62,7 +62,7 @@
     </div>
   </div>
 
-  <main class="outer" role="main" id="main" data-portal-component-type="region">
+  <main class="main" role="main" id="main" data-portal-component-type="region">
     <div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
       <div data-portal-component="${component.path}" data-th-remove="tag"></div>
     </div>
@@ -110,8 +110,7 @@
   </footer>
 
   <!-- Javascripts -->
-  <!-- // <script src="../../assets/js/app.min.js"></script> -->
-  <script type="text/javascript" src="../../assets/js/fp.js"
+  <script type="text/javascript" src="../../assets/js/app.min.js"
           data-th-src="${portal.assetUrl({'_path=js/app.js'})}"></script>
 
 </body>

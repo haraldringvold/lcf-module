@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<content-type>
+  <display-name>Article</display-name>
+  <super-type>base:structured</super-type>
+  <is-abstract>false</is-abstract>
+  <is-final>false</is-final>
+  <allow-child-content>true</allow-child-content>
+  <form>
+
+  </form>
+</content-type>

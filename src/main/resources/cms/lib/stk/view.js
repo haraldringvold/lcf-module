@@ -6,6 +6,7 @@ exports.view.render = function(view, params) {
         body: execute('thymeleaf.render', {
             view: view,
             model: params
-        })
+        }),
+        contentType: 'text/html'
     };
 };

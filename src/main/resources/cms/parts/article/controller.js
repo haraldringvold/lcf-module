@@ -6,9 +6,7 @@ exports.get = function(req) {
   var component = execute('portal.getComponent');
   var config = component.config;
 
-  var baseClasses = "outer eyecatcher fixed";
-
-  var heading       = config['heading'];
+  var heading = config['heading'];
 
   var params = {
     heading: heading

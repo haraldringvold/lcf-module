@@ -1164,9 +1164,64 @@ i.fa.primary {
 
 ----- */
 /* --------------------------------
+    Text section
+-------------------------------- */
+/* line 16, ../sass/_modules.scss */
+main > section[data-portal-component-type="text"] {
+  *zoom: 1;
+  max-width: 75em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 6em;
+  padding-bottom: 6em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+/* line 17, ../vendor/bourbon/addons/_clearfix.scss */
+main > section[data-portal-component-type="text"]:before, main > section[data-portal-component-type="text"]:after {
+  content: " ";
+  display: table;
+}
+/* line 23, ../vendor/bourbon/addons/_clearfix.scss */
+main > section[data-portal-component-type="text"]:after {
+  clear: both;
+}
+@media screen and (min-width: 900px) {
+  /* line 16, ../sass/_modules.scss */
+  main > section[data-portal-component-type="text"] {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+}
+@media screen and (min-width: 1400px) {
+  /* line 16, ../sass/_modules.scss */
+  main > section[data-portal-component-type="text"] {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+}
+/* line 33, ../sass/_modules.scss */
+main > section[data-portal-component-type="text"] h1 {
+  border-top: 1px solid #ccc;
+  padding-top: 1em;
+  margin-top: 1.2em;
+}
+/* line 39, ../sass/_modules.scss */
+main > section[data-portal-component-type="text"] h1:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 20px;
+}
+
+/* line 47, ../sass/_modules.scss */
+.the-team .inner.narrow:not(:first-child) {
+  margin-top: 30px;
+}
+
+/* --------------------------------
     Eyecatcher
 -------------------------------- */
-/* line 17, ../sass/_modules.scss */
+/* line 54, ../sass/_modules.scss */
 .eyecatcher {
   background-color: #fdfdfb;
   background-repeat: no-repeat;
@@ -1182,44 +1237,44 @@ i.fa.primary {
   width: 100%;
   min-height: 400px;
 }
-/* line 34, ../sass/_modules.scss */
+/* line 71, ../sass/_modules.scss */
 .eyecatcher.solid {
   background: #111;
 }
-/* line 38, ../sass/_modules.scss */
+/* line 75, ../sass/_modules.scss */
 .eyecatcher.fixed {
   background-attachment: fixed;
 }
 @media screen and (max-width: 900px) {
-  /* line 17, ../sass/_modules.scss */
+  /* line 54, ../sass/_modules.scss */
   .eyecatcher {
     height: 400px;
     background-attachment: scroll !important;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 17, ../sass/_modules.scss */
+  /* line 54, ../sass/_modules.scss */
   .eyecatcher {
     height: 300px;
   }
 }
-/* line 51, ../sass/_modules.scss */
+/* line 88, ../sass/_modules.scss */
 .eyecatcher.top-margin {
   margin-top: 60px;
 }
 @media screen and (max-width: 900px) {
-  /* line 51, ../sass/_modules.scss */
+  /* line 88, ../sass/_modules.scss */
   .eyecatcher.top-margin {
     margin-top: 0;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 51, ../sass/_modules.scss */
+  /* line 88, ../sass/_modules.scss */
   .eyecatcher.top-margin {
     margin-top: 0;
   }
 }
-/* line 64, ../sass/_modules.scss */
+/* line 101, ../sass/_modules.scss */
 .eyecatcher .inner {
   margin: 0;
   padding: 0;
@@ -1230,13 +1285,13 @@ i.fa.primary {
   vertical-align: middle;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
 }
-/* line 75, ../sass/_modules.scss */
+/* line 112, ../sass/_modules.scss */
 .eyecatcher.bottom-content {
   overflow: hidden;
   padding-bottom: 0;
   min-height: auto;
 }
-/* line 80, ../sass/_modules.scss */
+/* line 117, ../sass/_modules.scss */
 .eyecatcher.bottom-content .inner {
   *zoom: 1;
   max-width: 75em;
@@ -1245,7 +1300,7 @@ i.fa.primary {
   margin: 0 auto;
   vertical-align: bottom;
 }
-/* line 81, ../sass/_modules.scss */
+/* line 118, ../sass/_modules.scss */
 .eyecatcher.bottom-content .inner .super {
   padding-top: 2em;
 }
@@ -1258,7 +1313,7 @@ i.fa.primary {
 .eyecatcher.bottom-content .inner:after {
   clear: both;
 }
-/* line 91, ../sass/_modules.scss */
+/* line 128, ../sass/_modules.scss */
 .eyecatcher.bottom-content.bottom-image img {
   width: 100%;
   max-width: 75em;
@@ -1266,7 +1321,7 @@ i.fa.primary {
   display: block;
   clear: both;
 }
-/* line 102, ../sass/_modules.scss */
+/* line 139, ../sass/_modules.scss */
 .eyecatcher.bottom-content.bottom-info .content {
   width: 100%;
   max-width: 75em;
@@ -1281,15 +1336,15 @@ i.fa.primary {
   position: relative;
   text-shadow: none;
 }
-/* line 116, ../sass/_modules.scss */
+/* line 153, ../sass/_modules.scss */
 .eyecatcher.bottom-content.bottom-info .content i.fa {
   margin-right: 0.3em;
 }
-/* line 121, ../sass/_modules.scss */
+/* line 158, ../sass/_modules.scss */
 .eyecatcher.bottom-content.bottom-info.has-gradient {
   position: relative;
 }
-/* line 124, ../sass/_modules.scss */
+/* line 161, ../sass/_modules.scss */
 .eyecatcher.bottom-content.bottom-info.has-gradient:after {
   content: "";
   position: absolute;
@@ -1307,7 +1362,11 @@ i.fa.primary {
 /* --------------------------------
     Columns
 -------------------------------- */
-/* line 149, ../sass/_modules.scss */
+/* line 185, ../sass/_modules.scss */
+.columns figure {
+  margin: 0;
+}
+/* line 190, ../sass/_modules.scss */
 .columns.two .column {
   float: left;
   display: block;
@@ -1320,7 +1379,7 @@ i.fa.primary {
   margin-right: 0;
 }
 @media screen and (max-width: 900px) {
-  /* line 149, ../sass/_modules.scss */
+  /* line 190, ../sass/_modules.scss */
   .columns.two .column {
     float: left;
     display: block;
@@ -1333,25 +1392,25 @@ i.fa.primary {
     margin-right: 0;
   }
 }
-/* line 158, ../sass/_modules.scss */
+/* line 199, ../sass/_modules.scss */
 .columns.two .column:nth-child(2n) {
   margin-right: 0;
   margin-bottom: 2em;
 }
-/* line 163, ../sass/_modules.scss */
+/* line 204, ../sass/_modules.scss */
 .columns.two .column:last-child {
   margin-bottom: 0;
 }
-/* line 164, ../sass/_modules.scss */
-.columns.two .column .image + h2 {
+/* line 205, ../sass/_modules.scss */
+.columns.two .column figure + h2 {
   margin-top: 1em;
 }
-/* line 167, ../sass/_modules.scss */
-.columns.two .column .image img {
+/* line 208, ../sass/_modules.scss */
+.columns.two .column figure img {
   width: 100%;
   height: auto;
 }
-/* line 176, ../sass/_modules.scss */
+/* line 217, ../sass/_modules.scss */
 .columns.three .column {
   float: left;
   display: block;
@@ -1364,7 +1423,7 @@ i.fa.primary {
   margin-right: 0;
 }
 @media screen and (max-width: 900px) {
-  /* line 176, ../sass/_modules.scss */
+  /* line 217, ../sass/_modules.scss */
   .columns.three .column {
     float: left;
     display: block;
@@ -1377,25 +1436,25 @@ i.fa.primary {
     margin-right: 0;
   }
 }
-/* line 185, ../sass/_modules.scss */
+/* line 226, ../sass/_modules.scss */
 .columns.three .column:nth-child(3n) {
   margin-right: 0;
   margin-bottom: 2em;
 }
-/* line 190, ../sass/_modules.scss */
+/* line 231, ../sass/_modules.scss */
 .columns.three .column:last-child {
   margin-bottom: 0;
 }
-/* line 191, ../sass/_modules.scss */
-.columns.three .column .image + h2 {
+/* line 232, ../sass/_modules.scss */
+.columns.three .column figure + h2 {
   margin-top: 1em;
 }
-/* line 194, ../sass/_modules.scss */
-.columns.three .column .image img {
+/* line 235, ../sass/_modules.scss */
+.columns.three .column figure img {
   width: 100%;
   height: auto;
 }
-/* line 203, ../sass/_modules.scss */
+/* line 244, ../sass/_modules.scss */
 .columns.four .column {
   float: left;
   display: block;
@@ -1408,7 +1467,7 @@ i.fa.primary {
   margin-right: 0;
 }
 @media screen and (max-width: 900px) {
-  /* line 203, ../sass/_modules.scss */
+  /* line 244, ../sass/_modules.scss */
   .columns.four .column {
     float: left;
     display: block;
@@ -1421,21 +1480,21 @@ i.fa.primary {
     margin-right: 0;
   }
 }
-/* line 212, ../sass/_modules.scss */
+/* line 253, ../sass/_modules.scss */
 .columns.four .column:nth-child(4n) {
   margin-right: 0;
   margin-bottom: 2em;
 }
-/* line 217, ../sass/_modules.scss */
+/* line 258, ../sass/_modules.scss */
 .columns.four .column:last-child {
   margin-bottom: 0;
 }
-/* line 218, ../sass/_modules.scss */
-.columns.four .column .image + h2 {
+/* line 259, ../sass/_modules.scss */
+.columns.four .column figure + h2 {
   margin-top: 1em;
 }
-/* line 221, ../sass/_modules.scss */
-.columns.four .column .image img {
+/* line 262, ../sass/_modules.scss */
+.columns.four .column figure img {
   width: 100%;
   height: auto;
 }
@@ -1443,7 +1502,7 @@ i.fa.primary {
 /* ------------------------------------
     Galleries
 ------------------------------------ */
-/* line 234, ../sass/_modules.scss */
+/* line 275, ../sass/_modules.scss */
 .gallery {
   *zoom: 1;
 }
@@ -1456,11 +1515,11 @@ i.fa.primary {
 .gallery:after {
   clear: both;
 }
-/* line 238, ../sass/_modules.scss */
+/* line 279, ../sass/_modules.scss */
 .gallery a:hover {
   opacity: 0.9;
 }
-/* line 244, ../sass/_modules.scss */
+/* line 285, ../sass/_modules.scss */
 .gallery.xlarge .image {
   float: left;
   display: block;
@@ -1471,17 +1530,17 @@ i.fa.primary {
 .gallery.xlarge .image:last-child {
   margin-right: 0;
 }
-/* line 247, ../sass/_modules.scss */
+/* line 288, ../sass/_modules.scss */
 .gallery.xlarge .image:nth-child(odd) {
   margin-right: 0;
 }
-/* line 251, ../sass/_modules.scss */
+/* line 292, ../sass/_modules.scss */
 .gallery.xlarge .image img {
   width: 100%;
   height: auto;
   margin-bottom: 1em;
 }
-/* line 260, ../sass/_modules.scss */
+/* line 301, ../sass/_modules.scss */
 .gallery.large .image {
   float: left;
   display: block;
@@ -1492,17 +1551,17 @@ i.fa.primary {
 .gallery.large .image:last-child {
   margin-right: 0;
 }
-/* line 263, ../sass/_modules.scss */
+/* line 304, ../sass/_modules.scss */
 .gallery.large .image:nth-child(odd) {
   margin-right: 0;
 }
-/* line 267, ../sass/_modules.scss */
+/* line 308, ../sass/_modules.scss */
 .gallery.large .image img {
   width: 100%;
   height: auto;
   margin-bottom: 1em;
 }
-/* line 276, ../sass/_modules.scss */
+/* line 317, ../sass/_modules.scss */
 .gallery.small .image {
   float: left;
   display: block;
@@ -1513,44 +1572,44 @@ i.fa.primary {
 .gallery.small .image:last-child {
   margin-right: 0;
 }
-/* line 279, ../sass/_modules.scss */
+/* line 320, ../sass/_modules.scss */
 .gallery.small .image:nth-child(3n) {
   margin-right: 0;
 }
-/* line 283, ../sass/_modules.scss */
+/* line 324, ../sass/_modules.scss */
 .gallery.small .image img {
   width: 100%;
   height: auto;
   margin-bottom: 1em;
 }
-/* line 291, ../sass/_modules.scss */
+/* line 332, ../sass/_modules.scss */
 .gallery.full-width {
   margin: 0;
   padding: 0;
 }
-/* line 296, ../sass/_modules.scss */
+/* line 337, ../sass/_modules.scss */
 .gallery.full-width .image {
   margin: 0px;
 }
-/* line 299, ../sass/_modules.scss */
+/* line 340, ../sass/_modules.scss */
 .gallery.full-width .image img {
   margin: 0px;
   float: left;
 }
-/* line 306, ../sass/_modules.scss */
+/* line 347, ../sass/_modules.scss */
 .gallery.full-width.xlarge .image {
   width: 100%;
 }
-/* line 312, ../sass/_modules.scss */
+/* line 353, ../sass/_modules.scss */
 .gallery.full-width.large .image {
   width: 50%;
 }
-/* line 318, ../sass/_modules.scss */
+/* line 359, ../sass/_modules.scss */
 .gallery.full-width.small .image {
   width: 25%;
 }
 @media screen and (max-width: 900px) {
-  /* line 318, ../sass/_modules.scss */
+  /* line 359, ../sass/_modules.scss */
   .gallery.full-width.small .image {
     width: 50%;
   }
@@ -1559,7 +1618,7 @@ i.fa.primary {
 /* --------------------------------
     Price table
 -------------------------------- */
-/* line 336, ../sass/_modules.scss */
+/* line 377, ../sass/_modules.scss */
 .price-table.four .column {
   float: left;
   display: block;
@@ -1570,7 +1629,7 @@ i.fa.primary {
 .price-table.four .column:last-child {
   margin-right: 0;
 }
-/* line 342, ../sass/_modules.scss */
+/* line 383, ../sass/_modules.scss */
 .price-table.three .column {
   float: left;
   display: block;
@@ -1582,52 +1641,52 @@ i.fa.primary {
   margin-right: 0;
 }
 @media screen and (max-width: 900px) {
-  /* line 348, ../sass/_modules.scss */
+  /* line 389, ../sass/_modules.scss */
   .price-table .column {
     width: 100% !important;
     display: block;
     margin-bottom: 2em;
   }
 }
-/* line 355, ../sass/_modules.scss */
+/* line 396, ../sass/_modules.scss */
 .price-table header {
   background-color: #111;
   color: #fff;
   padding: 3em 1.5em;
   border-radius: 4px 4px 0 0;
 }
-/* line 361, ../sass/_modules.scss */
+/* line 402, ../sass/_modules.scss */
 .price-table header.focus {
   background-color: #1bb776;
 }
-/* line 365, ../sass/_modules.scss */
+/* line 406, ../sass/_modules.scss */
 .price-table header small {
   display: block;
   margin-bottom: 1em;
 }
-/* line 370, ../sass/_modules.scss */
+/* line 411, ../sass/_modules.scss */
 .price-table header .price {
   font-size: 3em;
   vertical-align: bottom;
   padding-bottom: 0.3em;
 }
-/* line 375, ../sass/_modules.scss */
+/* line 416, ../sass/_modules.scss */
 .price-table header .price * {
   display: inline-block;
 }
-/* line 379, ../sass/_modules.scss */
+/* line 420, ../sass/_modules.scss */
 .price-table header .price span {
   opacity: 0.7;
 }
-/* line 382, ../sass/_modules.scss */
+/* line 423, ../sass/_modules.scss */
 .price-table header .price span.currency {
   font-size: 0.4em;
 }
-/* line 386, ../sass/_modules.scss */
+/* line 427, ../sass/_modules.scss */
 .price-table header .price span.frequency {
   font-size: 0.2em;
 }
-/* line 393, ../sass/_modules.scss */
+/* line 434, ../sass/_modules.scss */
 .price-table .line {
   padding: 0.8em 1em;
   border-color: #bbb;
@@ -1638,11 +1697,11 @@ i.fa.primary {
   font-size: 0.9em;
   opacity: 0.8;
 }
-/* line 403, ../sass/_modules.scss */
+/* line 444, ../sass/_modules.scss */
 .price-table .line i {
   margin-right: 0.8em;
 }
-/* line 407, ../sass/_modules.scss */
+/* line 448, ../sass/_modules.scss */
 .price-table .line:last-child {
   border-radius: 0 0 4px 4px;
 }
@@ -1650,7 +1709,7 @@ i.fa.primary {
 /* --------------------------------
     Footers
 -------------------------------- */
-/* line 418, ../sass/_modules.scss */
+/* line 459, ../sass/_modules.scss */
 footer.outer {
   background: #191919 !important;
   color: #fff;
@@ -1658,7 +1717,7 @@ footer.outer {
   padding-bottom: 4.5em;
 }
 @media screen and (max-width: 900px) {
-  /* line 429, ../sass/_modules.scss */
+  /* line 470, ../sass/_modules.scss */
   footer.outer .column {
     text-align: center;
   }

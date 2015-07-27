@@ -36,3 +36,16 @@ exports.getLinkUrl = function(contentKey, url, anchorContentKey) {
 exports.getContentAnchor = function(contentKey) {
     return stk.content.getProperty(contentKey, '_name');
 };
+
+exports.determineUrl = function(linkUrl, anchorContent, linkPage) {
+  if (linkUrl) {
+    return exports.getLinkUrl(null, linkUrl, null);
+  }
+  if (linkPage) {
+    return exports.getLinkUrl(linkPage, null, null);
+  }
+  if (anchorContent) {
+    return exports.getLinkUrl(null, null, anchorContent);
+  }
+  return "";
+};

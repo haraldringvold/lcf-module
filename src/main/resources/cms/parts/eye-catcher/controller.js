@@ -13,8 +13,8 @@ exports.get = function(req) {
   var linkUrl       = config['linkUrl'];
   var anchorContent = config['anchorContent'];
   var linkPage      = config['linkPage'];
-  var imgUrl        =  execute('portal.imageUrl', {id: config['image']});
-  var url           = determineUrl(linkUrl, anchorContent, linkPage);
+  var imgUrl        = execute('portal.imageUrl', {id: config['image']});
+  var url           = utilities.determineUrl(linkUrl, anchorContent, linkPage);
   var classes       = config['fullHeight'] ? baseClasses+" full-height" : baseClasses;
 
   var params = {
@@ -29,17 +29,3 @@ exports.get = function(req) {
 
   return stk.view.render(view, params);
 };
-
-var determineUrl = function(linkUrl, anchorContent, linkPage) {
-  if (linkUrl) {
-    return utilities.getLinkUrl(null, linkUrl, null);
-  }
-  if (linkPage) {
-    return utilities.getLinkUrl(linkPage, null, null);
-  }
-  if (anchorContent) {
-    return utilities.getLinkUrl(null, null, anchorContent);
-  }
-  return "";
-};
-

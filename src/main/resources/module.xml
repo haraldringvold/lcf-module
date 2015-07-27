@@ -10,5 +10,4 @@
   <dependencies system-min-version="5.0.0" system-max-version="6.0.0"/>
   <config>
   </config>
-  <!-- <x-data mixin="menu-item"/> -->
 </module>

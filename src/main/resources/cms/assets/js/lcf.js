@@ -7,21 +7,24 @@ $(function() {
 
 });
 
-function isHoverImage(src) {
-  return src.indexOf('_hover') > 0;
+function isHoverImage(element) {
+  return element.data("is-hover");
 }
 
 // Simple function that assumes the image src has naming convention "_hover"
 // with no other underscores in it.
 function toggleImage(element) {
+  var hoverAttr = "hover-src";
+  var cacheAttr = "org-src"
+  var isHoverAttr = "is-hover";
   var src = element.attr('src');
-  if(isHoverImage(src)) {
-    var splits = src.split('.');
-    var path = splits[0];
-    var suffix = "."+splits[1];
-    var pathparts = splits[0].split("_");
-    element.attr('src', pathparts[0]+suffix);
+  if(isHoverImage(element)) {
+    element.data(isHoverAttr, false);
+    element.attr('src', element.data(cacheAttr));
   } else {
-    element.attr('src', element.data("hover-src"));
+    var hoverUrl = element.data(hoverAttr);
+    element.data(cacheAttr, src);
+    element.data(isHoverAttr, true);
+    element.attr('src', hoverUrl);
   }
 }

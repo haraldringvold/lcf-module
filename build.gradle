@@ -72,7 +72,7 @@ minifyJs {
 // Configure the built-in task
 combineJs {
     source = javascript.source.jquery.js.files + javascript.source.vendor.js.files + minifyJs
-    dest = file("${buildDir}/resources/main/cms/assets/js/all.js")
+    dest = file("${buildDir}/resources/main/cms/assets/js/app.js")
 }
 
 jar.dependsOn += combineJs

@@ -32,9 +32,13 @@ exports.get = function(req) {
       'og:image': execute('portal.assetUrl', { path: 'img/og-enonic-logo.png' })
   };
 
+  var mainRegion   = content.page.regions["main"];
+  var footerRegion = content.page.regions["footer"];
+
   var params = {
       siteTitle: site['displayName'],
-      mainRegion: content.page.regions['main'],
+      mainRegion: mainRegion,
+      footerRegion: footerRegion,
       sitePath: site['_path'],
       moduleConfig: moduleConfig,
       menuItems: menuItems,
@@ -43,7 +47,6 @@ exports.get = function(req) {
       pageTitle: pageTitle,
       pageHead: pageHead,
       openGraph: openGraph
-
   };
 
   var view = resolve('default.html');

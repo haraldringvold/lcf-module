@@ -3,16 +3,13 @@ var stk = require('/cms/lib/stk/stk.js');
 var utilities = require('/cms/lib/utilities.js');
 
 exports.get = function(req) {
-  var component = execute('portal.getComponent');
-  var config = component.config;
-
-  var heading = config['heading'];
+  var menuItems = menu.getSiteMenu(3);
 
   var params = {
-    heading: heading
+    menuItems: menuItems
   };
 
-  var view = resolve('article.html');
+  var view = resolve('menu.html');
 
   return stk.view.render(view, params);
 };

@@ -109,6 +109,39 @@ blockquote {
   }
 }
 
+/* --------------------------------
+    Text section
+-------------------------------- */
+main > section[data-portal-component-type="text"] {
+    @include outer-container;
+    padding-top: $outer-padding-top;
+    padding-bottom: $outer-padding-bottom;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
+    @include media($screen) {
+      padding-left: $outer-padding-left;
+      padding-right: $outer-padding-right;
+    }
+
+    @include media($largescreen) {
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
+
+    h1 {
+      border-top: 1px solid #ccc;
+      padding-top: 1em;
+      margin-top: 1.2em;
+    }
+
+    h1:first-child {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 20px;
+    }
+}
+
 
 /* --------------------------------
     Icons

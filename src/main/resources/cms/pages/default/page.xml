@@ -4,5 +4,6 @@
   <config />
   <regions>
     <region name="main"/>
+    <region name="footer"/>
   </regions>
 </page-component>

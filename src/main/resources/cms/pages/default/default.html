@@ -54,9 +54,9 @@
                data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
                data-th-class="${menuItem.path == path ? 'active' : ''}">Page title</a>
           </li>
-          <li class="pull-right language">
+          <!-- <li class="pull-right language">
             <a href="{{ menu.language_path }}">{{ menu.change_language }}</a>
-          </li>
+          </li> -->
         </ul>
       </nav>
     </div>
@@ -69,13 +69,16 @@
   </main>
 
   <footer class="outer columns three">
+    <!-- <div data-th-each="component : ${footerRegion.components}" data-th-remove="tag">
+      <div data-portal-component="${component.path}" data-th-remove="tag"></div>
+    </div> -->
     <div class="inner text-left">
       <div class="column">
         <h3>
-          {{ footer.contact_title }}
+          Kontakt oss
         </h3>
         <p>
-          {{ footer.email }}
+          Epost: <a href="mailto:linkchildfoundation@gmail.com">linkchildfoundation@gmail.com</a>
         </p>
         <p>
           <div class="fb-like" data-href="http://www.facebook.com/linkchildfoundation" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
@@ -83,28 +86,26 @@
       </div>
       <div class="column">
         <h3>
-          {{ footer.navigation_title }}
+          Navigasjon
         </h3>
         <ul class="linklist">
           <li>
-            <a href="index.html">{{ footer.frontpage }}</a>
+            <a href="index.html" data-th-href="${portal.pageUrl({'_path=' + sitePath})}"
+                        data-th-text="${siteTitle}">Forsiden</a>
           </li>
-          <li>
-            <a href="om.html">{{ footer.about }}</a>
-          </li>
-          <li>
-            <a href="hvordan-hjelpe.html">{{ footer.how_to_help }}</a>
-          </li>
-          <li>
-            <a href="historie.html">{{ footer.history }}</a>
+          <li data-th-each="menuItem : ${menuItems}">
+            <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
+               data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
+               data-th-class="${menuItem.path == path ? 'active' : ''}">Page title</a>
           </li>
         </ul>
       </div>
       <div class="column">
         <h3>
-          {{ footer.gift_title }}
+          Gi en gave
         </h3>
-        {{ footer.gift_text }}
+        <p>Alle pengene går uavkortet til prosjektet i Uganda.</p>
+        <p>Kontonummer: 1503.50.22853</p>
       </div>
     </div>
   </footer>

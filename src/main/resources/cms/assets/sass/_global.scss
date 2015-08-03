@@ -129,13 +129,11 @@ body {
         padding-right: 0.5em;
     }
 
-    &:nth-child(odd) {
-        background-color: $background-color;
+    &.no-padding {
+      padding-top: 0;
+      padding-bottom: 0;
     }
 
-    &:nth-child(even) {
-        background-color: $second-background-color;
-    }
 }
 
 .inner {

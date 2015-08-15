@@ -10,6 +10,7 @@
     Assets
 -------------------------------- */
 @import url(../vendor/flexslider/flexslider.css);
+@import url(../vendor/font-awesome/css/font-awesome.css);
 /* line 2, ../vendor/neat/grid/_grid.scss */
 * {
   -webkit-box-sizing: border-box;

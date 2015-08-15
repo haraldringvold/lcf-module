@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<part-component>
+  <display-name>Social icons</display-name>
+  <config>
+    <field-set name="info">
+      <label>Social media links</label>
+      <items>
+        <input name="facebook" type="TextLine">
+          <label>Facebook</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input name="youtube" type="TextLine">
+          <label>Youtube</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input name="instagram" type="TextLine">
+          <label>Instagram</label>
+          <immutable>false</immutable>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+      </items>
+    </field-set>
+  </config>
+</part-component>

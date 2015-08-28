@@ -1,0 +1,79 @@
+/* --------------------------------
+    TABLE OF CONTENTS
+-----------------------------------
+    Screen sizes
+    Grid
+    Sizes
+    Colors
+    Chosen colors
+    Z-index
+
+----- */
+
+/* --------------------------------
+    Screen sizes
+-------------------------------- */
+$mobile: new-breakpoint(max-width 480px 4);
+$tablet: new-breakpoint(max-width 900px 4);
+$screen: new-breakpoint(min-width 900px);
+$largescreen: new-breakpoint(min-width 1400px);
+
+
+/* --------------------------------
+    Grid
+-------------------------------- */
+$grid-columns: 12;
+$max-width: em(1200);
+
+$outer-padding-top: 	6em;
+$outer-padding-bottom: 	6em;
+$outer-padding-left: 	3em;
+$outer-padding-right: 	3em;
+
+
+/* --------------------------------
+    Sizes
+-------------------------------- */
+$side-nav-width: 300px;
+
+
+/* --------------------------------
+    Colors
+-------------------------------- */
+$darkest: #111;
+$darker: #191919;
+$dark: #252525;
+
+$green: #1bb776;
+$pink: #EE3D8A;
+$red: #FF4136;
+$purple: #6a2a78;
+$orange: #f8aa45;
+
+
+/* --------------------------------
+    Chosen colors
+-------------------------------- */
+$primary-color: $green;
+
+$highlight-color: $primary-color;
+$input-placeholder-color: #c3c3c3;
+
+$background-color: #f0f0f0;
+$second-background-color: #fff;
+
+$side-nav-text-color: #fff;
+$side-nav-background-color: $darkest;
+
+$side-nav-toggler-icon-color: #fff;
+$side-nav-toggler-background-color: $darkest;
+
+
+/* --------------------------------
+    Z-index
+-------------------------------- */
+$index-topnav: 1090;
+$index-topnav-dropdown: 1100;
+$index-sidenav-toggler: 1110;
+
+

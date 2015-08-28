@@ -1,0 +1,151 @@
+/* --------------------------------
+    TABLE OF CONTENTS
+-----------------------------------
+    Headers
+    Text
+    Icons
+
+----- */
+
+
+/* --------------------------------
+    Headers
+-------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif;
+  &.white { color: #fff; }
+
+  small {
+    color: inherit;
+    opacity: 0.5;
+    font-size: 0.7em;
+    display: block;
+    font-weight: normal;
+
+    &.inline {
+      display: inline-block;
+    }
+  }
+
+  &.super {
+    font-size: 3em;
+    margin-top: 0;
+
+    @include media($tablet) {
+      font-size: 3em;
+    }
+
+    @include media($mobile) {
+      font-size: 2em;
+    }
+  }
+}
+
+h2 {
+  margin-top: 0;
+  &:only-child { margin: 0; }
+}
+
+span.primary {
+  color: $primary-color;
+
+  &.code {
+    font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+  }
+}
+
+.inner.narrow.text-left {
+  &:nth-child(1) { margin-top: 20px; }
+  & h2 { margin-top: 30px; }
+}
+
+
+/* --------------------------------
+    Text
+-------------------------------- */
+p {
+  &.white { color: #fff; }
+  &.super { font-size: 1.5em; }
+}
+
+a {
+  @include transition(all 0.1s ease-in-out);
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: $primary-color - 00030;
+
+    i {
+      @include transition(all 0.1s ease-in-out);
+      color: $primary-color - 00030;
+    }
+  }
+
+  &.white {
+    color: #fff;
+  }
+
+  &.black {
+    color: $darkest;
+  }
+
+  &.primary {
+    color: $primary-color;
+  }
+}
+
+blockquote {
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  border-left: 3px solid $primary-color;
+
+  cite {
+    display: block;
+    font-size: 0.7em;
+    opacity: 0.6;
+    padding-top: 0.6em;
+  }
+}
+
+/* --------------------------------
+    Text section
+-------------------------------- */
+main > section[data-portal-component-type="text"] {
+    @include outer-container;
+    padding-top: $outer-padding-top;
+    padding-bottom: $outer-padding-bottom;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
+    @include media($screen) {
+      padding-left: $outer-padding-left;
+      padding-right: $outer-padding-right;
+    }
+
+    @include media($largescreen) {
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
+
+    h1 {
+      border-top: 1px solid #ccc;
+      padding-top: 1em;
+      margin-top: 1.2em;
+    }
+
+    h1:first-child {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 20px;
+    }
+}
+
+
+/* --------------------------------
+    Icons
+-------------------------------- */
+i.fa.primary {
+  color: $primary-color;
+}

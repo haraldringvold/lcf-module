@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<layout>
+  <display-name>Four columns</display-name>
+  <config>
+    <field-set name="basic">
+      <label>Konfigurasjon</label>
+      <items>
+        <input name="noPadding" type="Checkbox">
+          <label>No top and bottom padding</label>
+          <occurrences minimum="0" maximum="0"/>
+        </input>
+      </items>
+    </field-set>
+  </config>
+  <regions>
+    <region name="one"/>
+    <region name="two"/>
+    <region name="three"/>
+    <region name="four"/>
+  </regions>
+</layout>

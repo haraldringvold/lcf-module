@@ -12,6 +12,7 @@ buildscript {
     }
 
     dependencies {
+        classpath 'com.enonic.xp:gradle-plugin:6.0.0-RC2'
         classpath 'com.enonic.xp.gradle:gradle-plugin:1.2.0'
         classpath 'com.eriwen:gradle-js-plugin:1.12.1'
         classpath 'com.github.robfletcher:compass-gradle-plugin:2.0.4'
@@ -19,43 +20,68 @@ buildscript {
 }
 
 apply plugin: 'idea'
-apply plugin: 'com.enonic.xp.gradle.module'
+apply plugin: 'com.enonic.xp.app'
 apply plugin: 'maven'
 apply plugin: 'com.eriwen.gradle.js'
 apply plugin: 'base'
 apply plugin: 'com.github.robfletcher.compass'
 
-
 version = '1.0.0-SNAPSHOT'
-group = 'no.ripples.modules'
 
-module {
+app {
+    name = 'no.ripples.xp.lcf'
     displayName = 'Link Child Foundation'
+    vendorName = 'Ripples'
+    vendorUrl = 'http://ripples.no'
+}
+
+ext {
+    xpVersion = '6.0.0-RC2'
+}
+
+dependencies {
+    compile "com.enonic.xp:core-api:${xpVersion}"
+    compile "com.enonic.xp:portal-api:${xpVersion}"
+    include "com.enonic.xp:lib-content:${xpVersion}"
+    include "com.enonic.xp:lib-portal:${xpVersion}"
+    include "com.enonic.xp:lib-thymeleaf:${xpVersion}"
+    include "com.enonic.xp:lib-xslt:${xpVersion}"
+    include "com.enonic.xp:lib-mustache:${xpVersion}"
+    include "com.enonic.xp:lib-i18n:${xpVersion}"
+    include "com.enonic.lib:util:0.0.8"
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+    maven {
+        url 'http://repo.enonic.com/public'
+    }
 }
 
 compass {
-    cssDir = file("src/main/resources/cms/assets/css")
-    sassDir = file("src/main/resources/cms/assets/sass")
+    cssDir = file("src/main/resources/site/assets/css")
+    sassDir = file("src/main/resources/site/assets/sass")
 }
 
 // Declare your sources
 javascript.source {
     custom {
         js {
-            srcDir "src/main/resources/cms/assets/js"
+            srcDir "src/main/resources/site/assets/js"
             include "*.js"
             //exclude "*.min.js"
         }
     }
     vendor {
         js {
-            srcDir "src/main/resources/cms/assets/js/vendor"
+            srcDir "src/main/resources/site/assets/js/vendor"
             include "*.js"
         }
     }
     jquery {
             js {
-                srcDir "src/main/resources/cms/assets/js/vendor/jquery"
+                srcDir "src/main/resources/site/assets/js/vendor/jquery"
                 include "*.js"
             }
         }
@@ -63,7 +89,7 @@ javascript.source {
 
 minifyJs {
     source = javascript.source.custom.js.files
-    dest = file("${buildDir}/resources/main/cms/assets/js/custom.min.js")
+    dest = file("${buildDir}/resources/main/site/assets/js/custom.min.js")
     closure {
         warningLevel = 'QUIET'
     }
@@ -73,7 +99,7 @@ minifyJs {
 // Configure the built-in task
 combineJs {
     source = javascript.source.jquery.js.files + javascript.source.vendor.js.files + minifyJs
-    dest = file("${buildDir}/resources/main/cms/assets/js/app.js")
+    dest = file("${buildDir}/resources/main/site/assets/js/app.js")
 }
 
 jar.dependsOn += combineJs

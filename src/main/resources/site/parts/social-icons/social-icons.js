@@ -1,22 +1,21 @@
-var menu = require('/lib/util/js/util.js').menu;
-var stk = require('/lib/stk/stk.js');
-var utilities = require('/lib/utilities.js');
+var thymeleaf = require('/lib/xp/thymeleaf');
+var contentLib = require('/lib/xp/content'); // Import the content service functions
+var portal = require('/lib/xp/portal'); // Import the portal functions
+var utils = require('/lib/util/js/util.js');
 
 exports.get = function(req) {
-  var component = execute('portal.getComponent');
+  var component = portal.getComponent();
   var config = component.config;
 
-  var facebook       = config['facebook'];
-  var youtube        = config['youtube'];
-  var instagram      = config['instagram'];
-
   var params = {
-    facebook: facebook,
-    youtube: youtube,
-    instagram: instagram
+    facebook: config.facebook,
+    youtube: config.youtube,
+    instagram: config.instagram
   };
 
   var view = resolve('social-icons.html');
 
-  return stk.view.render(view, params);
+  return {
+    body: thymeleaf.render(view, params)
+  };
 };

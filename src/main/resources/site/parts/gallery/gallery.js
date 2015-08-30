@@ -1,26 +1,27 @@
-var menu = require('/lib/util/js/util.js').menu;
-var stk = require('/lib/stk/stk.js');
-var utilities = require('/lib/utilities.js');
+var thymeleaf = require('/lib/xp/thymeleaf');
+var contentLib = require('/lib/xp/content'); // Import the content service functions
+var portal = require('/lib/xp/portal'); // Import the portal functions
+var utils = require('/lib/util/js/util.js');
 
 exports.get = function(req) {
-  var component = execute('portal.getComponent');
-  var currentContent = execute('portal.getContent');
-  var config = component.config;
+  var component = portal.getComponent();
+  var currentContent = portal.getContent();
+  var siteConfig = portal.getSiteConfig();
 
-  var result = execute('content.getChildren', {
-      key: config['imageFolder'],
+  var result = contentLib.getChildren({
+      key: siteConfig.imageFolder,
       count: 20,
       contentTypes: [
         'media:image'
       ]
   });
+  utils.log(result)
 
   var images = [];
 
-  for (var i = 0; i < result.contents.length; i++) {
-    var content = result.contents[i];
-    stk.data.deleteEmptyProperties(content.data)
-    content.data.imageUrl = execute('portal.imageUrl', {id: content._id});
+  for (var i = 0; i < result.count; i++) {
+    var content = result.hits[i];
+    content.data.imageUrl = portal.imageUrl({id: content._id, scale: '(1,1)'});
     images.push(content);
   }
 
@@ -30,5 +31,7 @@ exports.get = function(req) {
 
   var view = resolve('gallery.html');
 
-  return stk.view.render(view, params);
+  return {
+    body: thymeleaf.render(view, params)
+  };
 };

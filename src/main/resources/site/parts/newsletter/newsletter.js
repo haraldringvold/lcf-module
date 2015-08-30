@@ -1,12 +1,13 @@
-var menu = require('/lib/util/js/util.js').menu;
-var stk = require('/lib/stk/stk.js');
-var utilities = require('/lib/utilities.js');
+var thymeleaf = require('/lib/xp/thymeleaf');
+var contentLib = require('/lib/xp/content'); // Import the content service functions
+var portal = require('/lib/xp/portal'); // Import the portal functions
+var utils = require('/lib/util/js/util.js');
 
 exports.get = function(req) {
-  var currentContent = execute('portal.getContent');
-  var component = execute('portal.getComponent');
+  var currentContent = portal.getContent();
+  var component = portal.getComponent();
 
-  var result = execute('content.getChildren', {
+  var result = contentLib.getChildren({
       key: currentContent._path,
       count: 100,
       contentTypes: [
@@ -15,10 +16,12 @@ exports.get = function(req) {
   });
 
   var params = {
-    newsletters: result.contents
+    newsletters: result.hits
   };
 
   var view = resolve('newsletter.html');
 
-  return stk.view.render(view, params);
+  return {
+    body: thymeleaf.render(view, params)
+  };
 };

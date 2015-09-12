@@ -1,9 +1,7 @@
+var thymeleaf = require('/lib/xp/thymeleaf');
 var contentLib = require('/lib/xp/content'); // Import the content service functions
 var portal = require('/lib/xp/portal'); // Import the portal functions
-var UTIL = require('/lib/util/js/util.js');
 var menu = require('/lib/util/js/util.js').menu;
-var stk = require('/lib/stk/stk.js');
-var thymeleaf = require('/lib/xp/thymeleaf');
 
 
 exports.get = function(req) {

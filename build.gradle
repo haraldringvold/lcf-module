@@ -8,12 +8,10 @@ buildscript {
         maven {
             url 'http://dl.bintray.com/robfletcher/gradle-plugins'
         }
-
     }
 
     dependencies {
-        classpath 'com.enonic.xp:gradle-plugin:6.0.0-RC2'
-        classpath 'com.enonic.xp.gradle:gradle-plugin:1.2.0'
+        classpath 'com.enonic.xp:gradle-plugin:6.0.0'
         classpath 'com.eriwen:gradle-js-plugin:1.12.1'
         classpath 'com.github.robfletcher:compass-gradle-plugin:2.0.4'
     }
@@ -33,10 +31,11 @@ app {
     displayName = 'Link Child Foundation'
     vendorName = 'Ripples'
     vendorUrl = 'http://ripples.no'
+    // xpHome = file("${projectDir}/../xp6RC2/home")
 }
 
 ext {
-    xpVersion = '6.0.0-RC2'
+    xpVersion = '6.0.0'
 }
 
 dependencies {

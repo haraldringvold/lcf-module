@@ -31,7 +31,6 @@ app {
     displayName = 'Link Child Foundation'
     vendorName = 'Ripples'
     vendorUrl = 'http://ripples.no'
-    // xpHome = file("${projectDir}/../xp6RC2/home")
 }
 
 ext {

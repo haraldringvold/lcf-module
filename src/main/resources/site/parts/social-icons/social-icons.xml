@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <part>
   <display-name>Social icons</display-name>
   <config>
-    <field-set name="info">
+    <field-set name="links">
       <label>Social media links</label>
       <items>
-        <input name="facebook" type="TextLine">
+        <input type="TextLine" name="facebook">
           <label>Facebook</label>
           <occurrences minimum="0" maximum="1"/>
         </input>
-        <input name="youtube" type="TextLine">
+        <input type="TextLine" name="youtube">
           <label>Youtube</label>
           <occurrences minimum="0" maximum="1"/>
         </input>
-        <input name="instagram" type="TextLine">
+        <input type="TextLine" name="instagram">
           <label>Instagram</label>
-          <immutable>false</immutable>
           <occurrences minimum="0" maximum="1"/>
         </input>
       </items>

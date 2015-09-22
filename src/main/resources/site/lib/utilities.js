@@ -1,4 +1,6 @@
 var stk = require('/lib/stk/stk.js');
+var portal = require('/lib/xp/portal'); // Import the portal functions
+
 
 // Module specific utilities, not suitable for STK
 
@@ -17,11 +19,11 @@ exports.getLinkUrl = function(contentKey, url, anchorContentKey) {
         returnUrl = url;
     }
     else if (contentKey) {
-        var result = execute('content.get', {
+        var result = portal.getContent({
            key: contentKey
         });
         if (result) {
-            returnUrl = execute('portal.pageUrl', {
+            returnUrl = portal.pageUrl({
                path: result._path
             });
             if (anchorContentKey) {
@@ -34,7 +36,7 @@ exports.getLinkUrl = function(contentKey, url, anchorContentKey) {
 };
 
 exports.getContentAnchor = function(contentKey) {
-    return stk.content.getProperty(contentKey, '_name');
+    return portal.getProperty(contentKey, '_name');
 };
 
 exports.determineUrl = function(linkUrl, anchorContent, linkPage) {

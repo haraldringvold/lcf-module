@@ -11,10 +11,11 @@ exports.get = function(req) {
 
   var menuItems = menu.get(3);
 
-  var siteConfig = site.data.siteConfig;;
+  var siteConfig = site.data.siteConfig;
 
   // Google Analytics
   var googleUATrackingId = siteConfig.config['googleUATrackingId'] || null;
+  var facebookAppId = siteConfig.config['facebookAppId'] || null;
 
   // Contact page URL (for footer)
   var contactPageUrl = siteConfig.config['contactPage'] ? portal.pageUrl({id: siteConfig.config['contactPage']}) : '#';
@@ -31,8 +32,8 @@ exports.get = function(req) {
   var openGraph = {
       'og:title': content['displayName'],
       'og:site_name': site['displayName'],
-      'og:url': null,
-      'og:image': portal.assetUrl({ path: 'img/og-enonic-logo.png' })
+      // 'og:url': null,
+      // 'og:image': portal.assetUrl({ path: 'img/og-enonic-logo.png' })
   };
 
   var mainRegion   = content.page.regions["main"];
@@ -47,6 +48,7 @@ exports.get = function(req) {
       menuItems: menuItems,
       headerType: headerType,
       googleUATrackingId: googleUATrackingId,
+      facebookAppId: facebookAppId,
       pageTitle: pageTitle,
       pageHead: pageHead,
       openGraph: openGraph

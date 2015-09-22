@@ -1,4 +1,3 @@
-var stk = require('/lib/stk/stk.js');
 var portal = require('/lib/xp/portal'); // Import the portal functions
 
 
@@ -43,9 +42,7 @@ exports.determineUrl = function(linkUrl, anchorContent, linkPage) {
   if (linkUrl) {
     return exports.getLinkUrl(null, linkUrl, null);
   }
-  if (linkPage) {
-    return exports.getLinkUrl(linkPage, null, null);
-  }
+  if(linkPage){return exports.getLinkUrl(linkPage, null, null);}
   if (anchorContent) {
     return exports.getLinkUrl(null, null, anchorContent);
   }

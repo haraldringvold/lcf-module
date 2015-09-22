@@ -19,8 +19,8 @@ exports.get = function(req) {
 
   for (var i = 0; i < result.hits.length; i++) {
     var content = result.hits[i];
-    content.data.imageUrl = portal.imageUrl({id: content.data.image, scale: 'width(852,852)'});
-    content.data.hoverImageUrl = portal.imageUrl({id: content.data.hoverImage, scale: 'width(852,852)'});
+    content.data.imageUrl = portal.imageUrl({id: content.data.image, scale: 'block(349,349)'});
+    content.data.hoverImageUrl = portal.imageUrl({id: content.data.hoverImage, scale: 'block(349,349)'});
     persons.push(content);
   }
 

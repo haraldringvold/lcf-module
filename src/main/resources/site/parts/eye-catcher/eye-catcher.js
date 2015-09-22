@@ -9,7 +9,7 @@ exports.get = function(req) {
   var config = component.config;
 
   var baseClasses = "outer eyecatcher fixed";
-  utils.log(config);
+
   var heading       = config.heading;
   var linkText      = config.linkText;
   var linkUrl       = config.linkUrl;

@@ -15,13 +15,12 @@ exports.get = function(req) {
         'media:image'
       ]
   });
-  utils.log(result)
 
   var images = [];
 
   for (var i = 0; i < result.count; i++) {
     var content = result.hits[i];
-    content.data.imageUrl = portal.imageUrl({id: content._id, scale: '(1,1)'});
+    content.data.imageUrl = portal.imageUrl({id: content._id, scale: 'block(480,319)'});
     images.push(content);
   }
 

@@ -1,9 +1,8 @@
-var menu = require('/lib/util/js/util.js').menu;
+var menu = require('/lib/enonic/menu/menu').menu;
 var stk = require('/lib/stk/stk.js');
-var utilities = require('/lib/utilities.js');
 
 exports.get = function(req) {
-  var menuItems = menu.getSiteMenu(3);
+  var menuItems = menu.getMenuTree(3);
 
   var params = {
     menuItems: menuItems

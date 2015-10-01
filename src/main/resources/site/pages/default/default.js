@@ -1,7 +1,7 @@
 var thymeleaf = require('/lib/xp/thymeleaf');
 var contentLib = require('/lib/xp/content'); // Import the content service functions
 var portal = require('/lib/xp/portal'); // Import the portal functions
-var menu = require('/lib/util/js/util.js').menu;
+var menu = require('/lib/enonic/menu/menu');
 
 
 exports.get = function(req) {
@@ -9,7 +9,7 @@ exports.get = function(req) {
   var site = portal.getSite();
   var content = portal.getContent();
 
-  var menuItems = menu.get(3);
+  var menuItems = menu.getMenuTree(3);
 
   var siteConfig = site.data.siteConfig;
 

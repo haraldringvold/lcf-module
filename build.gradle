@@ -41,14 +41,33 @@ ext {
     xpVersion = '6.0.0'
 }
 
+remotes {
+  webServer {
+    host = 'xp.harald.io'
+    user = 'harald'
+    identity = file('/Users/harald/.ssh/id_rsa')
+  }
+}
+
+
 scmVersion {
     tag {
-        prefix = 'lcf'
+        prefix = rootProject.name
         initialVersion = {config, position -> '1.0.0'}
     }
 }
 
 project.version = scmVersion.version
+
+task publish << {
+
+  println "$rootProject.name-$scmVersion.version"+".jar"
+  ssh.run {
+    session(remotes.webServer) {
+      put "$rootProject.name-$scmVersion.version"+".jar", '/opt/enonic-xp-6.0.0/home/deploy'
+    }
+  }
+}
 
 dependencies {
     compile "com.enonic.xp:core-api:${xpVersion}"
@@ -60,6 +79,7 @@ dependencies {
     include "com.enonic.xp:lib-mustache:${xpVersion}"
     include "com.enonic.xp:lib-i18n:${xpVersion}"
     include "com.enonic.lib:util:1.0.0"
+    include 'com.enonic.lib:menu:1.0.0'
 }
 
 repositories {

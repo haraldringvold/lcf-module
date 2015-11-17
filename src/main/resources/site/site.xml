@@ -4,14 +4,6 @@
     <field-set name="info">
       <label>Info</label>
       <items>
-        <input type="ContentSelector" name="imageFolder">
-          <label>Image folder</label>
-          <occurrences minimum="1" maximum="1"/>
-          <config>
-            <relationship-type>system:reference</relationship-type>
-            <allow-content-type>base:folder</allow-content-type>
-          </config>
-        </input>
         <input type="TextLine" name="googleUATrackingId">
           <label>Google Analyctics ID</label>
           <occurrences minimum="0" maximum="1"/>

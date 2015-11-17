@@ -42,12 +42,14 @@ exports.get = function(req) {
 
   var messages = {};
 
-  messages.contact_us         = i18n.localize({ key: 'contact_us' });
-  messages.contact_email      = i18n.localize({ key: 'contact_email' });
-  messages.navigation         = i18n.localize({ key: 'navigation' });
-  messages.give_a_gift        = i18n.localize({ key: 'give_a_gift' });
-  messages.contribution_usage = i18n.localize({ key: 'contribution_usage' });
-  messages.account_number     = i18n.localize({ key: 'account_number' });
+  messages.contact_us          = i18n.localize({ key: 'contact_us' });
+  messages.contact_email       = i18n.localize({ key: 'contact_email' });
+  messages.navigation          = i18n.localize({ key: 'navigation' });
+  messages.give_a_gift         = i18n.localize({ key: 'give_a_gift' });
+  messages.contribution_usage  = i18n.localize({ key: 'contribution_usage' });
+  messages.account_number      = i18n.localize({ key: 'account_number' });
+  messages.change_language     = i18n.localize({ key: 'change_language' });
+  messages.change_language_url = i18n.localize({ key: 'change_language_url' });
 
   var params = {
     siteTitle: site['displayName'],
@@ -64,7 +66,7 @@ exports.get = function(req) {
     openGraph: openGraph,
     messages: messages
   };
-  log.debug('Params %s',params);
+
   return {
     body: thymeleaf.render(view, params)
   }

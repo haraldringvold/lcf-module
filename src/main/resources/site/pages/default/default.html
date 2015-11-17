@@ -73,9 +73,9 @@
                data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
                data-th-class="${menuItem.path == path ? 'active' : ''}">Page title</a>
           </li>
-          <!-- <li class="pull-right language">
-            <a href="{{ menu.language_path }}">{{ menu.change_language }}</a>
-          </li> -->
+          <li class="pull-right language">
+            <a data-th-href="${messages.change_language_url}" data-th-text="${messages.change_language}"></a>
+          </li>
         </ul>
       </nav>
     </div>

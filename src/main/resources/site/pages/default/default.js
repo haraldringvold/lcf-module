@@ -2,7 +2,8 @@ var thymeleaf = require('/lib/xp/thymeleaf');
 var contentLib = require('/lib/xp/content'); // Import the content service functions
 var portal = require('/lib/xp/portal'); // Import the portal functions
 var menu = require('/lib/enonic/menu/menu');
-
+var i18n = require('/lib/xp/i18n')
+var view = resolve('default.html');
 
 exports.get = function(req) {
 
@@ -39,23 +40,31 @@ exports.get = function(req) {
   var mainRegion   = content.page.regions["main"];
   var footerRegion = content.page.regions["footer"];
 
+  var messages = {};
+
+  messages.contact_us         = i18n.localize({ key: 'contact_us' });
+  messages.contact_email      = i18n.localize({ key: 'contact_email' });
+  messages.navigation         = i18n.localize({ key: 'navigation' });
+  messages.give_a_gift        = i18n.localize({ key: 'give_a_gift' });
+  messages.contribution_usage = i18n.localize({ key: 'contribution_usage' });
+  messages.account_number     = i18n.localize({ key: 'account_number' });
+
   var params = {
-      siteTitle: site['displayName'],
-      mainRegion: mainRegion,
-      footerRegion: footerRegion,
-      sitePath: site['_path'],
-      siteConfig: siteConfig,
-      menuItems: menuItems,
-      headerType: headerType,
-      googleUATrackingId: googleUATrackingId,
-      facebookAppId: facebookAppId,
-      pageTitle: pageTitle,
-      pageHead: pageHead,
-      openGraph: openGraph
+    siteTitle: site['displayName'],
+    mainRegion: mainRegion,
+    footerRegion: footerRegion,
+    sitePath: site['_path'],
+    siteConfig: siteConfig,
+    menuItems: menuItems,
+    headerType: headerType,
+    googleUATrackingId: googleUATrackingId,
+    facebookAppId: facebookAppId,
+    pageTitle: pageTitle,
+    pageHead: pageHead,
+    openGraph: openGraph,
+    messages: messages
   };
-
-  var view = resolve('default.html');
-
+  log.debug('Params %s',params);
   return {
     body: thymeleaf.render(view, params)
   }

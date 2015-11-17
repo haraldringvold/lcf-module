@@ -76,6 +76,7 @@ scmVersion {
         prefix = rootProject.name
         initialVersion = {config, position -> '1.0.0'}
     }
+    versionCreator 'versionWithBranch'
 }
 
 project.version = scmVersion.version

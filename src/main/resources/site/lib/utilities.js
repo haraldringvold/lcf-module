@@ -1,5 +1,5 @@
 var portal = require('/lib/xp/portal'); // Import the portal functions
-
+var content = require('/lib/xp/content'); // Import the content functions
 
 // Module specific utilities, not suitable for STK
 
@@ -13,12 +13,11 @@ var portal = require('/lib/xp/portal'); // Import the portal functions
  */
 exports.getLinkUrl = function(contentKey, url, anchorContentKey) {
     var returnUrl = null;
-
     if (url) {
         returnUrl = url;
     }
     else if (contentKey) {
-        var result = portal.getContent({
+        var result = content.get({
            key: contentKey
         });
         if (result) {
@@ -36,15 +35,4 @@ exports.getLinkUrl = function(contentKey, url, anchorContentKey) {
 
 exports.getContentAnchor = function(contentKey) {
     return portal.getProperty(contentKey, '_name');
-};
-
-exports.determineUrl = function(linkUrl, anchorContent, linkPage) {
-  if (linkUrl) {
-    return exports.getLinkUrl(null, linkUrl, null);
-  }
-  if(linkPage){return exports.getLinkUrl(linkPage, null, null);}
-  if (anchorContent) {
-    return exports.getLinkUrl(null, null, anchorContent);
-  }
-  return "";
 };

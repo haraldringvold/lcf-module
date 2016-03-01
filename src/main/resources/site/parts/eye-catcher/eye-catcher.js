@@ -15,7 +15,7 @@ exports.get = function(req) {
   var anchorContent = config.anchorContent;
   var linkPage      = config.linkPage;
   var imgUrl        = portal.imageUrl({id: config.image, scale: '(1,1)'});
-  var url           = utilities.determineUrl(linkUrl, anchorContent, linkPage);
+  var url           = utilities.getLinkUrl(linkPage, linkUrl, anchorContent);
   var classes       = config.fullHeight ? baseClasses+" full-height" : baseClasses;
 
   var params = {

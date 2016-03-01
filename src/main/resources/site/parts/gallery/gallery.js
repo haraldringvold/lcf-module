@@ -5,10 +5,9 @@ var portal = require('/lib/xp/portal'); // Import the portal functions
 exports.get = function(req) {
   var component = portal.getComponent();
   var currentContent = portal.getContent();
-  var siteConfig = portal.getSiteConfig();
 
   var result = contentLib.getChildren({
-      key: siteConfig.imageFolder,
+      key: component.config.imageFolder,
       count: 20,
       contentTypes: [
         'media:image'

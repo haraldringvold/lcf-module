@@ -18,12 +18,6 @@ exports.get = function(req) {
   var googleUATrackingId = siteConfig.config['googleUATrackingId'] || null;
   var facebookAppId = siteConfig.config['facebookAppId'] || null;
 
-  // Contact page URL (for footer)
-  var contactPageUrl = siteConfig.config['contactPage'] ? portal.pageUrl({id: siteConfig.config['contactPage']}) : '#';
-
-  // Defines whether page header is layered or not
-  var headerType = content.page.config['headerType'] ? content.page.config['headerType'] : 'default';
-
   // Head title
   var pageTitle = content['displayName'];
 
@@ -31,10 +25,8 @@ exports.get = function(req) {
 
   // Open Graph Metadata
   var openGraph = {
-      'og:title': content['displayName'],
-      'og:site_name': site['displayName'],
-      // 'og:url': null,
-      // 'og:image': portal.assetUrl({ path: 'img/og-enonic-logo.png' })
+    'og:title': content['displayName'],
+    'og:site_name': site['displayName']
   };
 
   var mainRegion   = content.page.regions["main"];
@@ -58,7 +50,6 @@ exports.get = function(req) {
     sitePath: site['_path'],
     siteConfig: siteConfig,
     menuItems: menuItems,
-    headerType: headerType,
     googleUATrackingId: googleUATrackingId,
     facebookAppId: facebookAppId,
     pageTitle: pageTitle,

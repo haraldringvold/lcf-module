@@ -55,21 +55,12 @@ dependencies {
 }
 
 repositories {
-    mavenLocal()
-    jcenter()
-    maven {
-        url 'http://repo.enonic.com/public'
-    }
+        mavenLocal()
+        jcenter()
+        maven {
+            url 'http://repo.enonic.com/public'
+        }
 }
-
-remotes {
-  webServer {
-    host = 'xp.harald.io'
-    user = 'harald'
-    identity = file('/Users/harald/.ssh/id_rsa')
-  }
-}
-
 
 scmVersion {
     tag {
@@ -81,19 +72,29 @@ scmVersion {
 
 project.version = scmVersion.version
 
-task publish << {
-
-  println "$rootProject.name-$scmVersion.version"+".jar"
-  ssh.run {
-    session(remotes.webServer) {
-      put "$rootProject.name-$scmVersion.version"+".jar", '/opt/enonic-xp-6.0.0/home/deploy'
+remotes {
+    webserver {
+        host = 'xp.harald.io'
+        user = 'harald'
+        agent = true
+        identity = file('${System.getProperty("user.home")}/.ssh/id_rsa')
     }
-  }
 }
 
+task publish << {
+    println "Deployer $rootProject.name-$project.version"+".jar til $remotes.webserver.host"
+    ssh.run {
+        session(remotes.webserver) {
+            put "$buildDir/libs/$rootProject.name-$project.version"+".jar", '/opt/enonic-xp-6.2.0/home/deploy'
+        }
+    }
+    println "$rootProject.name-$project.version"+".jar er deployet til $remotes.webserver.host"
+}
+publish.dependsOn += build
+
 compass {
-    cssDir = file("src/main/resources/site/assets/css")
-    sassDir = file("src/main/resources/site/assets/sass")
+        cssDir = file("src/main/resources/site/assets/css")
+        sassDir = file("src/main/resources/site/assets/sass")
 }
 
 // Declare your sources
@@ -112,11 +113,11 @@ javascript.source {
         }
     }
     jquery {
-            js {
-                srcDir "src/main/resources/site/assets/js/vendor/jquery"
-                include "*.js"
-            }
+        js {
+            srcDir "src/main/resources/site/assets/js/vendor/jquery"
+            include "*.js"
         }
+    }
 }
 
 minifyJs {

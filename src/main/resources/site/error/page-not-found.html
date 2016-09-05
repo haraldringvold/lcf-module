@@ -82,7 +82,8 @@
   </div>
 
   <main class="main" id="main">
-    <section class="outer eyecatcher fixed">
+    <section class="outer eyecatcher fixed full-height"
+      data-th-style="|background-image: url(${imgUrl});'|">
       <div class="inner">
         <h2 class="super" data-th-text="${pageTitle}">Page not Found</h2>
         <div class="description" data-th-text="${messages.error_description}"></div>

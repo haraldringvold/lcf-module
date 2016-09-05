@@ -2,6 +2,8 @@ var thymeleaf = require('/lib/xp/thymeleaf');
 var portal    = require('/lib/xp/portal'); // Import the portal functions
 var menu      = require('/lib/enonic/menu/menu');
 var i18n      = require('/lib/xp/i18n')
+var portal    = require('/lib/xp/portal')
+var stk       = require('/lib/stk/stk')
 
 // Views
 var view404     = resolve('page-not-found.html');
@@ -37,6 +39,12 @@ exports.handleError = function (err) {
   }
 };
 
+function getRandomBackgroundImage() {
+  var images = ["boat.jpg", "boats.jpg", "landscape.jpg", "landscape2.jpg", "sunset.jpg", "well.jpg"];
+  var img = images[Math.floor(Math.random()*images.length)];
+  return portal.assetUrl({ path: 'img/' + img });
+}
+
 function pageSetup(pageTitle) {
   var site = portal.getSite();
 
@@ -62,6 +70,8 @@ function pageSetup(pageTitle) {
   messages.change_language      = i18n.localize({ key: 'change_language' });
   messages.change_language_url  = i18n.localize({ key: 'change_language_url' });
 
+  var backgroundImage = portal.assetUrl({ path: 'img/boat.jpg' });
+
   return {
     siteTitle: site['displayName'],
     sitePath: site['_path'],
@@ -71,5 +81,6 @@ function pageSetup(pageTitle) {
     facebookAppId: facebookAppId,
     pageTitle: pageTitle,
     messages: messages,
+    imgUrl: backgroundImage
   };
 }

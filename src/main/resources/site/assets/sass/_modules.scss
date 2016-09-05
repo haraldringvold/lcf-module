@@ -10,9 +10,24 @@
 
 ----- */
 
+
+
+
 .the-team .inner.narrow:not(:first-child) {
   margin-top: 30px;
 }
+
+.the-team {
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  a:hover h2 span {
+    color: $primary-color;
+    text-decoration: underline;
+  }
+}
+
 
 /* --------------------------------
     Eyecatcher

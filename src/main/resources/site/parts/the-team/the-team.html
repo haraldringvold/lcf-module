@@ -1,16 +1,19 @@
 <div class="the-team outer columns three">
-    <div class="inner narrow" data-th-each="slice : ${persons}">
+  <div class="inner narrow" data-th-each="slice : ${persons}">
 
-      <div class="column text-left" data-th-each="person : ${slice}">
-        <div class="image">
+    <div class="column text-left person" data-th-each="person : ${slice}">
+      <div class="image">
+        <a data-th-href="${portal.pageUrl({'_path=' + person._path})}">
           <img class="profile-hover" data-th-src="${person.data.imageUrl}" th:attr="data-hover-src=${person.data.hoverImageUrl}" data-th-alt="${person.displayName}" />
-        </div>
+        </a>
+      </div>
+      <a data-th-href="${portal.pageUrl({'_path=' + person._path})}">
         <h2>
           <span data-th-text="${person.displayName}"></span>
-          <small data-th-text="${person.data.title}"></small>
+          <small data-th-text="${person.data.role}"></small>
         </h2>
-        <p data-th-text="${person.data.description}"></p>
-      </div>
-
+      </a>
     </div>
+
+  </div>
 </div>

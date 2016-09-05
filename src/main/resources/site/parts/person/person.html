@@ -1,0 +1,18 @@
+<div class="the-team outer columns two">
+  <div class="inner narrow">
+
+    <div class="column text-left">
+      <div class="image">
+        <img class="profile-hover" data-th-src="${imageUrl}" th:attr="data-hover-src=${hoverImageUrl}" data-th-alt="${name}" />
+      </div>
+    </div>
+    <div class="column text-left">
+      <h2>
+        <span data-th-text="${name}"></span>
+        <small data-th-text="${role}"></small>
+      </h2>
+      <p data-th-text="${description}"></p>
+    </div>
+
+  </div>
+</div>
